@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Stok Güncelle";
+}
+
+<nav class="navbar-primary" id="navbar1">
+    <a class="btn-expand-collapse" onclick="collapseMenu(1);">
+        <span class="glyphicon glyphicon-menu-left"></span>
+    </a>
+    <ul class="navbar-primary-menu">
+        <li>
+            <a href="/Personel/UrunListele">
+                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Ürün İşlemleri</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="" class="active">
+                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Stok İşlemleri</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="/Personel/KisiListele">
+                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Kurumsal</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="main-content">
+    <div class="content">
+        <form>
+            <h3>Stok Güncelle</h3>
+            <table>
+                <tr>
+                    <td>
+                        <label for="urunAdi">Ürün Adı: </label>
+                    </td>
+                    <td>
+                        <input class="form-control" id="urunAdi" type="text" value="Ürün 8">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="miktar">Stok Miktarı: </label>
+                    </td>
+                    <td><input class="form-control" id="miktar" type="text" value="600">
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fiyat">Adet Fiyatı: </label>
+                    </td>
+                    <td>
+                        <input class="form-control" id="fiyat" type="text" value="150€">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="maliyet">Toplam Maliyet: </label>
+                    </td>
+                    <td>
+                        <input class="form-control" id="maliyet" type="text" value="90000€">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="btn buttons" type="submit" value="Kaydet">
+                    </td>
+                </tr>
+                <div class="formImage">
+                    <img class="img img-thumbnail img-responsive" src="~/Assets/img.jpg" alt="Ürün Resmi" height="400" width="400">
+                </div>
+            </table>
+        </form>
+    </div>
+
+</div>

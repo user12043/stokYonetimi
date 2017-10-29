@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Ürün Listele";
+}
+
+<nav class="navbar-primary" id="navbar1">
+    <a class="btn-expand-collapse" onclick="collapseMenu(1);">
+        <span class="glyphicon glyphicon-menu-left"></span>
+    </a>
+    <ul class="navbar-primary-menu">
+        <li>
+            <a class="active">
+                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Ürün İşlemleri</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="/Personel/StokListele">
+                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Stok İşlemleri</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="/Personel/KisiListele">
+                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Kurumsal</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="main-content">
+
+    <div class="content">
+        <button class="btn buttons addButton btn-lg" onclick="location.href = '/Personel/UrunEkle'">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+        </button>
+        <table class="table table-bordered listTable">
+            <thead>
+            <tr>
+                <td>Ürün Adı</td>
+                <td>Adet Fiyatı</td>
+                <td>Tedarikçi</td>
+                <td>Ürün Açıklaması</td>
+                <td>İşlemler</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Ürün 1</td>
+                <td>150€</td>
+                <td>Ahmed</td>
+                <td>Açıklama</td>
+                <td>
+                    <a href="/Personel/UrunGuncelle">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-minus-sign"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Ürün 2</td>
+                <td>80€</td>
+                <td>Mehmed</td>
+                <td>Açıklama</td>
+                <td>
+                    <a href="/Personel/UrunGuncelle">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-minus-sign"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Ürün 3</td>
+                <td>100€</td>
+                <td>Ahmed</td>
+                <td>Açıklama</td>
+                <td>
+                    <a href="/Personel/UrunGuncelle">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-minus-sign"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Ürün 4</td>
+                <td>30€</td>
+                <td>Hasan</td>
+                <td>Açıklama</td>
+                <td>
+                    <a href="/Personel/UrunGuncelle">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-minus-sign"></span>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "SiparisListele";
+}
+
+<nav class="navbar-primary" id="navbar1">
+    <a class="btn-expand-collapse" onclick="collapseMenu(1);">
+        <span class="glyphicon glyphicon-menu-left"></span>
+    </a>
+    <ul class="navbar-primary-menu">
+        <li>
+            <a href="/Musteri/SiparisVer">
+                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Sipariş Ver</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="" class="active">
+                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Sipariş Listele</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="/Musteri/SepeteGit">
+                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Sepete Git</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="main-content">
+
+    <div class="content">
+        <button class="btn buttons addButton btn-lg" onclick="location.href = '/Musteri/SiparisVer'">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+        </button>
+        <table class="table table-bordered listTable">
+            <thead>
+            <tr>
+                <td>Durum</td>
+                <td>Ürün Adı</td>
+                <td>Miktarı</td>
+                <td>Adet Fiyatı</td>
+                <td>Ödenen</td>
+                <td>Sipariş Tarihi</td>
+                <td>İşlemler</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" name="" checked="1">
+                </td>
+                <td>Ürün 1</td>
+                <td>40</td>
+                <td>150€</td>
+                <td>6000€</td>
+                <td>01/05/2017</td>
+                <td>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span class="glyphicon glyphicon-minus-sign"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="">
+                </td>
+                <td>Ürün 2</td>
+                <td>20</td>
+                <td>80€</td>
+                <td>1600€</td>
+                <td>08/11/2017</td>
+                <td>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span class="glyphicon glyphicon-minus-sign"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="">
+                </td>
+                <td>Ürün 3</td>
+                <td>40</td>
+                <td>100€</td>
+                <td>4000€</td>
+                <td>23/12/2016</td>
+                <td>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span class="glyphicon glyphicon-minus-sign"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="">
+                </td>
+                <td>Ürün 4</td>
+                <td>150</td>
+                <td>30€</td>
+                <td>4500€</td>
+                <td>06/06/2017</td>
+                <td>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span class="glyphicon glyphicon-minus-sign"></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "SepeteGit";
+}
+
+<h2>SepeteGit</h2>
+
+<nav class="navbar-primary" id="navbar1">
+    <a class="btn-expand-collapse" onclick="collapseMenu(1);">
+        <span class="glyphicon glyphicon-menu-left"></span>
+    </a>
+    <ul class="navbar-primary-menu">
+        <li>
+            <a href="/Musteri/SiparisVer">
+                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Sipariş Ver</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="/Musteri/SiparisListele">
+                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Sipariş Listele</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="#" class="active">
+                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Sepete Git</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="main-content">
+    <div class="content">
+        <form class="smallForm">
+            <h4>Ürün 1</h4>
+            <div class="form-group">
+                <label for="adetFiyat">Adet Fiyatı: </label>
+                <input type="text" id="adetFiyat" class="form-control" value="150€">
+            </div>
+            <div class="form-group">
+                <label for="miktar">Ürün Miktarı: </label>
+                <input type="text" id="miktar" class="form-control" value="40">
+            </div>
+            <div class="form-group">
+                <label for="toplamFiyat">Toplam Fiyat: </label>
+                <input type="text" id="toplamFiyat" class="form-control" value="6000€">
+            </div>
+            <div class="form-group">
+                <button class="btn buttons" type="submit">
+                    <span class="glyphicon glyphicon-remove-circle"></span> &nbsp Çıkar
+                </button>
+            </div>
+        </form>
+        <form class="smallForm">
+            <h4>Ürün 2</h4>
+            <div class="form-group">
+                <label for="adetFiyat">Adet Fiyatı: </label>
+                <input type="text" id="adetFiyat" class="form-control" value="80">
+            </div>
+            <div class="form-group">
+                <label for="miktar">Ürün Miktarı: </label>
+                <input type="text" id="miktar" class="form-control" value="5">
+            </div>
+            <div class="form-group">
+                <label for="toplamFiyat">Toplam Fiyat: </label>
+                <input type="text" id="toplamFiyat" class="form-control" value="400€">
+            </div>
+            <div class="form-group">
+                <button class="btn buttons" type="submit">
+                    <span class="glyphicon glyphicon-remove-circle"></span> &nbsp Çıkar
+                </button>
+            </div>
+        </form>
+        <form class="smallForm">
+            <h4>Ürün 3</h4>
+            <div class="form-group">
+                <label for="adetFiyat">Adet Fiyatı: </label>
+                <input type="text" id="adetFiyat" class="form-control" value="100€">
+            </div>
+            <div class="form-group">
+                <label for="miktar">Ürün Miktarı: </label>
+                <input type="text" id="miktar" class="form-control" value="80">
+            </div>
+            <div class="form-group">
+                <label for="toplamFiyat">Toplam Fiyat: </label>
+                <input type="text" id="toplamFiyat" class="form-control" value="8000€">
+            </div>
+            <div class="form-group">
+                <button class="btn buttons" type="submit">
+                    <span class="glyphicon glyphicon-remove-circle"></span> &nbsp Çıkar
+                </button>
+            </div>
+        </form>
+
+        <!-- Bu aşağı geliyor soldaki menü kısa kalıyor ha haberin olsun -->
+        <!-- <form class="smallForm">
+            <h3>Ürün 1</h3>
+            <div class="form-group">
+                <label for="adetFiyat">Adet Fiyatı: </label>
+                <input type="text" id="adetFiyat" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="miktar">Ürün Miktarı: </label>
+                <input type="text" id="miktar" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="toplamFiyat">Toplam Fiyat: </label>
+                <input type="text" id="toplamFiyat" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="btn buttons" type="submit" class="form-control" value="Çıkar">
+            </div>
+        </form> -->
+
+
+        <button type="button" name="" id="" class="btn buttons button-Proceed btn-lg">
+            <span class="glyphicon glyphicon-check"></span>
+            Alışverişi Tamamla
+        </button>
+    </div>
+</div>

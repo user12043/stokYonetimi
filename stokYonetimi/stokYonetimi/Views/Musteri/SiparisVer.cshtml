@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "SiparisVer";
+}
+
+<nav class="navbar-primary" id="navbar1">
+    <a class="btn-expand-collapse" onclick="collapseMenu(1);">
+        <span class="glyphicon glyphicon-menu-left"></span>
+    </a>
+    <ul class="navbar-primary-menu">
+        <li>
+            <a href="" class="active">
+                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Sipariş Ver</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="/Musteri/SiparisListele">
+                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Sipariş Listele</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a href="/Musteri/SepeteGit">
+                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Sepete Git</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="main-content">
+    <div class="contentMenu">
+        <nav class="navbar-primary" id="navbar2">
+            <ul class="navbar-primary-menu">
+                <li>
+                    <a href="#" class="active">
+                        <span class="nav-label">Ürün 1</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+                    </a>
+                    <a href="#">
+                        <span class="nav-label">Ürün 2</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+                    </a>
+                    <a href="#">
+                        <span class="nav-label">Ürün 3</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content2">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label for="adetFiyat">Adet Fiyatı: </label>
+                    </td>
+                    <td>
+                        <input class="form-control" id="adetFiyat" type="text" value="150€">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="miktar">Ürün Miktarı: </label>
+                    </td>
+                    <td><input class="form-control" id="miktar" type="text" value="5">
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fiyat">Toplam Fiyat: </label>
+                    </td>
+                    <td>
+                        <input class="form-control" id="fiyat" type="text" value="750€">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="formSeperator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="btn buttons" type="submit" value="Sepete Ekle">
+                    </td>
+                </tr>
+                <div class="formImage">
+                    <img class="img img-thumbnail img-responsive" src="~/Assets/img.jpg" alt="Ürün Resmi" height="400" width="400">
+                </div>
+            </table>
+        </form>
+    </div>
+
+</div>
