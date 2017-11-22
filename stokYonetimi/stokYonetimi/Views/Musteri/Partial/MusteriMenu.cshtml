@@ -1,12 +1,13 @@
-﻿@model int
-
-@{
+﻿@{
     string[] links = new string[3];
     links[0] = "href=/Musteri/SiparisVer";
     links[1] = "href=/Musteri/SiparisListele";
     links[2] = "href=/Musteri/SepeteGit";
 
-    links[Model] = "class=active";
+    var activePage = ViewData["ActivePage"];
+    if (activePage != null) {
+        links[((int) activePage)] = "class=active";
+    }
 }
 
 <nav class="navbar-primary" id="navbar1">

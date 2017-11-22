@@ -23,7 +23,8 @@
     </ul>
 </nav>*@
 
-@Html.Partial("Partial/MusteriMenu", 2)
+@{ ViewData["activePage"] = 2; }
+@Html.Partial("Partial/MusteriMenu")
 
 <div class="main-content">
     <div class="content">
