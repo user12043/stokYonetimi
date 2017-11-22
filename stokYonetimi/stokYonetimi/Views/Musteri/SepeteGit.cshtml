@@ -4,7 +4,7 @@
 
 <h2>SepeteGit</h2>
 
-<nav class="navbar-primary" id="navbar1">
+@*<nav class="navbar-primary" id="navbar1">
     <a class="btn-expand-collapse" onclick="collapseMenu(1);">
         <span class="glyphicon glyphicon-menu-left"></span>
     </a>
@@ -16,12 +16,14 @@
             <a href="/Musteri/SiparisListele">
                 <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Sipariş Listele</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
             </a>
-            <a href="#" class="active">
+            <a class="active">
                 <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Sepete Git</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
             </a>
         </li>
     </ul>
-</nav>
+</nav>*@
+
+@Html.Partial("Partial/MusteriMenu", 2)
 
 <div class="main-content">
     <div class="content">

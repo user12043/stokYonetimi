@@ -207,6 +207,8 @@
     <Content Include="Views\Personel\KisiEkle.cshtml" />
     <Content Include="Views\Personel\KisiGuncelle.cshtml" />
     <Content Include="Views\Personel\KisiListele.cshtml" />
+    <Content Include="Views\Musteri\Partial\MusteriMenu.cshtml" />
+    <Content Include="Views\Personel\Partial\PersonelMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

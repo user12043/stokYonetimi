@@ -1,0 +1,29 @@
+﻿@model int
+    
+@{
+    string[] links = new string[3];
+    links[0] = "href=/Personel/UrunListele";
+    links[1] = "href=/Personel/StokListele";
+    links[2] = "href=/Personel/KisiListele";
+
+    links[Model] = "class=active";
+}
+
+<nav class="navbar-primary" id="navbar1">
+    <a class="btn-expand-collapse" onclick="collapseMenu(1);">
+        <span class="glyphicon glyphicon-menu-left"></span>
+    </a>
+    <ul class="navbar-primary-menu">
+        <li>
+            <a @links[0]>
+                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Ürün İşlemleri</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a @links[1]>
+                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Stok İşlemleri</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+            <a @links[2]>
+                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Kurumsal</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+            </a>
+        </li>
+    </ul>
+</nav>

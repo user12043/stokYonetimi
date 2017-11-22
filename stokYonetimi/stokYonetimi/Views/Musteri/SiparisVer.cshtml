@@ -2,13 +2,13 @@
     ViewBag.Title = "SiparisVer";
 }
 
-<nav class="navbar-primary" id="navbar1">
+@*<nav class="navbar-primary" id="navbar1">
     <a class="btn-expand-collapse" onclick="collapseMenu(1);">
         <span class="glyphicon glyphicon-menu-left"></span>
     </a>
     <ul class="navbar-primary-menu">
         <li>
-            <a href="" class="active">
+            <a class="active">
                 <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Sipariş Ver</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
             </a>
             <a href="/Musteri/SiparisListele">
@@ -19,7 +19,9 @@
             </a>
         </li>
     </ul>
-</nav>
+</nav>*@
+
+@Html.Partial("Partial/MusteriMenu", 0)
 
 <div class="main-content">
     <div class="contentMenu">
