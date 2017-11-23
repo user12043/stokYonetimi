@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using stokYonetimi.Models;
 
 namespace stokYonetimi.Controllers {
     public class PersonelController : Controller {
+        DatabaseContext context = new DatabaseContext();
+
         // GET: Personel
         public ActionResult StokEkle() {
             return View();
@@ -40,7 +43,9 @@ namespace stokYonetimi.Controllers {
         }
 
         public ActionResult KisiListele() {
-            return View();
+            IEnumerable<Kisi> kisiler = context.kisiler.ToList();
+
+            return View(kisiler);
         }
     }
 }

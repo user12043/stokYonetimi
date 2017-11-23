@@ -5,21 +5,18 @@ namespace stokYonetimi.Models {
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Stoklar")]
+    [Table("stoklar")]
     public partial class Stok {
         [Key]
         public int stokId { get; set; }
 
+        public DateTime olusturmaTarihi { get; set; }
+
+        public int miktar { get; set; }
+
+        public int adetFiyat { get; set; }
+
         public int urunId { get; set; }
-
-        [Required]
-        public string olusturmaTarihi { get; set; }
-
-        [Required]
-        public string adet { get; set; }
-
-        [Required]
-        public string adetFiyat { get; set; }
 
         public virtual Urun Urun { get; set; }
     }

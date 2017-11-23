@@ -5,12 +5,12 @@ namespace stokYonetimi.Models {
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Faturalar")]
+    [Table("faturalar")]
     public partial class Fatura {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
             "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Fatura() {
-            Siparisler = new HashSet<Siparis>();
+            siparisler = new HashSet<Siparis>();
         }
 
         [Key]
@@ -22,6 +22,8 @@ namespace stokYonetimi.Models {
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Siparis> Siparisler { get; set; }
+        public virtual ICollection<Siparis> siparisler { get; set; }
+
+        public virtual Musteri Musteri { get; set; }
     }
 }

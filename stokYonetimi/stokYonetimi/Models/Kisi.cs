@@ -5,7 +5,7 @@ namespace stokYonetimi.Models {
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Kisiler")]
+    [Table("kisiler")]
     public partial class Kisi {
         [Key]
         public int kisiId { get; set; }
@@ -13,10 +13,8 @@ namespace stokYonetimi.Models {
         [Required]
         public string isim { get; set; }
 
-        [Required]
         public string telefon { get; set; }
 
-        [Required]
         public string adres { get; set; }
 
         public string mailAdresi { get; set; }
@@ -24,7 +22,8 @@ namespace stokYonetimi.Models {
         [Required]
         public string sifre { get; set; }
 
-        [Required]
         public string resim { get; set; }
+
+        public int rolu { get; set; }
     }
 }

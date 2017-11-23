@@ -24,6 +24,8 @@
 @{ ViewData["activePage"] = 1; }
 @Html.Partial("Partial/MusteriMenu")
 
+@model List<stokYonetimi.Models.Siparis>
+
 <div class="main-content">
 
     <div class="content">
@@ -43,7 +45,25 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
+
+            @foreach (var siparis in Model) {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="" checked="checked">
+                    </td>
+                    <td>@siparis.Urun.isim</td>
+                    <td>@siparis.miktar</td>
+                    <td>@siparis.Urun.adetFiyat</td>
+                    <td>@siparis.fiyat</td>
+                    <td>@siparis.tarih</td>
+                    <td>
+                        <span class="glyphicon glyphicon-edit"></span>
+                        <span class="glyphicon glyphicon-minus-sign"></span>
+                    </td>
+                </tr>
+            }
+
+            @*<tr>
                 <td>
                     <input type="checkbox" name="" checked="1">
                 </td>
@@ -98,7 +118,7 @@
                     <span class="glyphicon glyphicon-edit"></span>
                     <span class="glyphicon glyphicon-minus-sign"></span>
                 </td>
-            </tr>
+            </tr>*@
             </tbody>
         </table>
     </div>

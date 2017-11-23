@@ -5,19 +5,16 @@ namespace stokYonetimi.Models {
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Siparisler")]
+    [Table("siparisler")]
     public partial class Siparis {
         [Key]
         public int siparisId { get; set; }
 
-        [Required]
-        public string siparisAdedi { get; set; }
+        public int miktar { get; set; }
 
-        [Required]
-        public string siparisTarihi { get; set; }
+        public DateTime tarih { get; set; }
 
-        [Required]
-        public string fiyat { get; set; }
+        public int fiyat { get; set; }
 
         public int musteriId { get; set; }
 
@@ -26,6 +23,8 @@ namespace stokYonetimi.Models {
         public int faturaId { get; set; }
 
         public virtual Fatura Fatura { get; set; }
+
+        public virtual Musteri Musteri { get; set; }
 
         public virtual Urun Urun { get; set; }
     }
