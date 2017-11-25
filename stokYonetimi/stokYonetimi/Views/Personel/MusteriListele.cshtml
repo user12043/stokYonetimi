@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Müşteri Listele";
+}
+
+@{ ViewData["activePage"] = 2; }
+@Html.Partial("Partial/PersonelMenu")
+
+@model IEnumerable<stokYonetimi.Models.Musteri>
+
+<div class="main-content">
+
+    <div class="content">
+        <button class="btn buttons addButton btn-lg" onclick="location.href = 'MusteriEkle'">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+        </button>
+        <table class="table table-bordered listTable">
+            <thead>
+            <tr>
+                <th>Müşteri No</th>
+                <th>Ad</th>
+                <th>Telefon</th>
+                <th>Mail Adresi</th>
+                <th>Adres</th>
+                <th>İşlemler</th>
+            </tr>
+            </thead>
+            <tbody>
+            @{
+                foreach (var musteri in Model) {
+                    <tr>
+                        <td>@musteri.musteriNo</td>
+                        <td>@musteri.isim</td>
+                        <td>@musteri.telefon</td>
+                        <td>@musteri.mailAdresi</td>
+                        <td>@musteri.adres</td>
+                        <td>
+                            <a href="/Personel/MusteriGuncelle?id=@musteri.kisiId">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                            <a href="/MusteriData/MusteriSil?id=@musteri.kisiId">
+                                <span class="glyphicon glyphicon-minus-sign"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

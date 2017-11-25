@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DataControllers\MusteriDataController.cs" />
     <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Global.asax.cs">
@@ -153,9 +154,9 @@
     <Content Include="Views\Personel\StokGuncelle.cshtml" />
     <Content Include="Views\Personel\StokListele.cshtml" />
     <Content Include="Views\Personel\UrunListele.cshtml" />
-    <Content Include="Views\Personel\KisiEkle.cshtml" />
-    <Content Include="Views\Personel\KisiGuncelle.cshtml" />
-    <Content Include="Views\Personel\KisiListele.cshtml" />
+    <Content Include="Views\Personel\MusteriEkle.cshtml" />
+    <Content Include="Views\Personel\MusteriGuncelle.cshtml" />
+    <Content Include="Views\Personel\MusteriListele.cshtml" />
     <Content Include="Views\Musteri\Partial\MusteriMenu.cshtml" />
     <Content Include="Views\Personel\Partial\PersonelMenu.cshtml" />
     <None Include="Web.Debug.config">

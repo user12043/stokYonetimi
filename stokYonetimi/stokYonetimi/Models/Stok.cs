@@ -18,6 +18,6 @@ namespace stokYonetimi.Models {
 
         public int urunId { get; set; }
 
-        public virtual Urun Urun { get; set; }
+        public virtual Urun urun { get; set; }
     }
 }

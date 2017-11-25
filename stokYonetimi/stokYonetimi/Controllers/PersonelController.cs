@@ -9,43 +9,43 @@ namespace stokYonetimi.Controllers {
     public class PersonelController : Controller {
         DatabaseContext context = new DatabaseContext();
 
-        // GET: Personel
+        // GET: Personel/StokEkle
         public ActionResult StokEkle() {
             return View();
         }
 
-        public ActionResult StokGuncelle() {
-            return View();
-        }
-
+        // GET: Personel/StokListele
         public ActionResult StokListele() {
             return View();
         }
 
+        // GET: Personel/UrunEkle
         public ActionResult UrunEkle() {
             return View();
         }
 
-        public ActionResult UrunGuncelle() {
-            return View();
-        }
-
+        // GET: Personel/UrunListele
         public ActionResult UrunListele() {
             return View();
         }
 
-        public ActionResult KisiEkle() {
+        // GET: Personel/MusteriEkle
+        public ActionResult MusteriEkle() {
             return View();
         }
 
-        public ActionResult KisiGuncelle() {
-            return View();
+        // GET: Personel/MusteriGuncelle
+        public ActionResult MusteriGuncelle(int id) {
+            Musteri musteri = context.musteriler.Find(id);
+
+            return View(musteri);
         }
 
-        public ActionResult KisiListele() {
-            IEnumerable<Kisi> kisiler = context.kisiler.ToList();
+        // GET: Personel/MusteriListele
+        public ActionResult MusteriListele() {
+            IEnumerable<Musteri> musteriler = context.musteriler.ToList();
 
-            return View(kisiler);
+            return View(musteriler);
         }
     }
 }

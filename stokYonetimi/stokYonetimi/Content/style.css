@@ -5,9 +5,12 @@
 }
 
 form {
-    width: 70%;
-    height: 80%;
-    padding: 5%;
+    width: 90%;
+    height: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 1%;
     background-color: #222;
     border-color: #080808;
     color: #fff;
@@ -26,9 +29,7 @@ table > tbody > tr > td > .glyphicon-minus-sign {
     float: right;
 }
 
-table > tbody > tr > td > textarea, select {
-    background-color: #222;
-}
+table > tbody > tr > td > textarea, select { background-color: #222; }
 
 .pageContent {
     padding: 0px;
@@ -150,16 +151,6 @@ table > tbody > tr > td > textarea, select {
     padding-top: 3%;
 }
 
-.formImage {
-    float: right;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    height: 60%;
-    width: 40%;
-}
-
-.formSeperator { margin-top: 30%; }
-
 .menuArrow {
     float: right;
     margin-left: 10px;
@@ -192,4 +183,15 @@ table > tbody > tr > td > textarea, select {
     height: auto;
     padding: 3%;
     /*padding-top: 1%;*/
+}
+
+.formContentLeft {
+    width: 45%;
+    float: left;
+}
+
+.formContentRight {
+    width: 45%;
+    float: left;
+    margin-left: 40px;
 }

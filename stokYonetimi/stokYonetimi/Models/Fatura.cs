@@ -24,6 +24,6 @@ namespace stokYonetimi.Models {
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Siparis> siparisler { get; set; }
 
-        public virtual Musteri Musteri { get; set; }
+        public virtual Musteri musteri { get; set; }
     }
 }

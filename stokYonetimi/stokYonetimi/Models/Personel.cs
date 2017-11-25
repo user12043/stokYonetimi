@@ -8,6 +8,6 @@ namespace stokYonetimi.Models {
     [Table("personeller")]
     public partial class Personel : Kisi {
         [Required]
-        public string sicilNo { get; set; }
+        public int sicilNo { get; set; }
     }
 }

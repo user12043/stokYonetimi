@@ -15,7 +15,7 @@ namespace stokYonetimi.Models {
         }
 
         [Required]
-        public string musteriNo { get; set; }
+        public int musteriNo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -22,10 +22,10 @@ namespace stokYonetimi.Models {
 
         public int faturaId { get; set; }
 
-        public virtual Fatura Fatura { get; set; }
+        public virtual Fatura fatura { get; set; }
 
-        public virtual Musteri Musteri { get; set; }
+        public virtual Musteri musteri { get; set; }
 
-        public virtual Urun Urun { get; set; }
+        public virtual Urun urun { get; set; }
     }
 }

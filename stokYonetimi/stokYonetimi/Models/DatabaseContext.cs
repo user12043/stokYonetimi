@@ -20,29 +20,29 @@ namespace stokYonetimi.Models {
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Entity<Fatura>()
                 .HasMany(e => e.siparisler)
-                .WithRequired(e => e.Fatura)
+                .WithRequired(e => e.fatura)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Musteri>()
                 .HasMany(e => e.faturalar)
-                .WithRequired(e => e.Musteri)
+                .WithRequired(e => e.musteri)
                 .HasForeignKey(e => e.musteriId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Musteri>()
                 .HasMany(e => e.siparisler)
-                .WithRequired(e => e.Musteri)
+                .WithRequired(e => e.musteri)
                 .HasForeignKey(e => e.musteriId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Urun>()
                 .HasMany(e => e.siparisler)
-                .WithRequired(e => e.Urun)
+                .WithRequired(e => e.urun)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Urun>()
                 .HasMany(e => e.stoklar)
-                .WithRequired(e => e.Urun)
+                .WithRequired(e => e.urun)
                 .WillCascadeOnDelete(false);
         }
     }
