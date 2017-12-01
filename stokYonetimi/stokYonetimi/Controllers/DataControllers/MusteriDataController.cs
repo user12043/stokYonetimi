@@ -17,17 +17,8 @@ namespace stokYonetimi.Controllers.DataControllers {
 
         // POST: MusteriData/MusteriEkle
         [HttpPost]
-        public ActionResult MusteriEkle(FormCollection collection) {
+        public ActionResult MusteriEkle(Musteri musteri) {
             try {
-                var musteri = new Musteri();
-                musteri.isim = collection.Get("isim");
-                musteri.sifre = collection.Get("sifre");
-                musteri.adres = collection.Get("adres");
-                musteri.telefon = collection.Get("telefon");
-                musteri.mailAdresi = collection.Get("mailAdres");
-                musteri.resim = collection.Get("resim");
-                musteri.rolu = 1;
-
                 var query = context.Database.SqlQuery<int>("SELECT NEXT VALUE FOR [dbo].[SEQ_musteriler_musteriNo]");
                 var task = query.FirstOrDefaultAsync();
                 musteri.musteriNo = task.Result;
@@ -45,18 +36,8 @@ namespace stokYonetimi.Controllers.DataControllers {
 
         // POST: MusteriData/MusteriGuncelle
         [HttpPost]
-        public ActionResult MusteriGuncelle(FormCollection collection) {
-            Musteri musteri = new Musteri();
+        public ActionResult MusteriGuncelle(Musteri musteri) {
             try {
-                musteri.kisiId = Convert.ToInt32(collection.Get("kisiId"));
-                musteri.musteriNo = Convert.ToInt32(collection.Get("musteriNo"));
-                musteri.isim = collection.Get("isim");
-                musteri.sifre = collection.Get("sifre");
-                musteri.adres = collection.Get("adres");
-                musteri.telefon = collection.Get("telefon");
-                musteri.mailAdresi = collection.Get("mailAdres");
-                musteri.resim = collection.Get("resim");
-
                 context.musteriler.AddOrUpdate(musteri);
                 context.SaveChanges();
 
@@ -72,6 +53,7 @@ namespace stokYonetimi.Controllers.DataControllers {
             Musteri musteri = context.musteriler.Find(id);
             context.musteriler.Remove(musteri);
             context.SaveChanges();
+
             return RedirectToActionPermanent("MusteriListele", "Personel");
         }
     }

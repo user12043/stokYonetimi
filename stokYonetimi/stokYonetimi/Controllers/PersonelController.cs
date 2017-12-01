@@ -24,9 +24,18 @@ namespace stokYonetimi.Controllers {
             return View();
         }
 
+        // GET: Personel/UrunGuncelle
+        public ActionResult UrunGuncelle(int id) {
+            Urun urun = context.urunler.Find(id);
+
+            return View(urun);
+        }
+
         // GET: Personel/UrunListele
         public ActionResult UrunListele() {
-            return View();
+            IEnumerable<Urun> urunler = context.urunler.ToList();
+
+            return View(urunler);
         }
 
         // GET: Personel/MusteriEkle
