@@ -9,6 +9,11 @@ namespace stokYonetimi.Controllers {
     public class PersonelController : Controller {
         DatabaseContext context = new DatabaseContext();
 
+        // GET: Personel
+        public ActionResult Index() {
+            return RedirectToAction("UrunListele");
+        }
+
         // GET: Personel/StokEkle
         public ActionResult StokEkle() {
             return View();
