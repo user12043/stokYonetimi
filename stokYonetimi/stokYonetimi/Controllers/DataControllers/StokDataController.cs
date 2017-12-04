@@ -1,72 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using stokYonetimi.Models;
 
 namespace stokYonetimi.Controllers.DataControllers {
     public class StokDataController : Controller {
+        private DatabaseContext context = new DatabaseContext();
+
         // GET: StokData
         public ActionResult Index() {
-            return View();
+            return RedirectToActionPermanent("StokListele", "Personel");
         }
 
-        // GET: StokData/Details/5
-        public ActionResult Details(int id) {
-            return View();
-        }
-
-        // GET: StokData/Create
-        public ActionResult Create() {
-            return View();
-        }
-
-        // POST: StokData/Create
+        // POST: StokData/StokEkle
         [HttpPost]
-        public ActionResult Create(FormCollection collection) {
+        public ActionResult StokEkle(Stok stok) {
             try {
-                // TODO: Add insert logic here
+                stok.olusturulmaTarihi = DateTime.Now;
+                context.stoklar.Add(stok);
+                context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
             catch {
-                return View();
+                return RedirectToActionPermanent("StokEkle", "Personel");
             }
         }
 
-        // GET: StokData/Edit/5
-        public ActionResult Edit(int id) {
-            return View();
-        }
-
-        // POST: StokData/Edit/5
+        // POST: StokData/StokGuncelle
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection) {
+        public ActionResult StokGuncelle(Stok stok) {
             try {
-                // TODO: Add update logic here
+                context.stoklar.AddOrUpdate(stok);
+                context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
             catch {
-                return View();
+                return RedirectToActionPermanent("StokGuncelle", "Personel");
             }
         }
 
-        // GET: StokData/Delete/5
-        public ActionResult Delete(int id) {
-            return View();
-        }
-
-        // POST: StokData/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection) {
+        // GET: StokData/StokSil/5
+        public ActionResult StokSil(int id) {
             try {
-                // TODO: Add delete logic here
+                Stok stok = context.stoklar.Find(id);
+                context.stoklar.Remove(stok);
+                context.SaveChanges();
 
                 return RedirectToAction("Index");
             }
             catch {
-                return View();
+                return RedirectToActionPermanent("StokGuncelle", "Personel");
             }
         }
     }

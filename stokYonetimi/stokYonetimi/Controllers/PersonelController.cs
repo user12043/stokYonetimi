@@ -7,7 +7,7 @@ using stokYonetimi.Models;
 
 namespace stokYonetimi.Controllers {
     public class PersonelController : Controller {
-        DatabaseContext context = new DatabaseContext();
+        private DatabaseContext context = new DatabaseContext();
 
         // GET: Personel
         public ActionResult Index() {
@@ -16,12 +16,25 @@ namespace stokYonetimi.Controllers {
 
         // GET: Personel/StokEkle
         public ActionResult StokEkle() {
-            return View();
+            var urunler = context.urunler.ToList();
+
+            return View(urunler);
+        }
+
+        // GET: Personel/StokGuncelle
+        public ActionResult StokGuncelle(int id) {
+            var urunler = context.urunler.ToList();
+            Stok stok = context.stoklar.Find(id);
+            ViewBag.stok = stok;
+
+            return View(urunler);
         }
 
         // GET: Personel/StokListele
         public ActionResult StokListele() {
-            return View();
+            var stoklar = context.stoklar.ToList();
+
+            return View(stoklar);
         }
 
         // GET: Personel/UrunEkle
