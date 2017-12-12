@@ -10,7 +10,7 @@ namespace stokYonetimi.Models {
         [Key]
         public int stokId { get; set; }
 
-        public DateTime olusturmaTarihi { get; set; }
+        public DateTime olusturulmaTarihi { get; set; }
 
         public int miktar { get; set; }
 
