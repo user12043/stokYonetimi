@@ -126,6 +126,7 @@
     <Compile Include="Controllers\DataControllers\MusteriDataController.cs" />
     <Compile Include="Controllers\DataControllers\StokDataController.cs" />
     <Compile Include="Controllers\DataControllers\UrunDataController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Global.asax.cs">
@@ -162,6 +163,7 @@
     <Content Include="Views\Personel\MusteriListele.cshtml" />
     <Content Include="Views\Musteri\Partial\MusteriMenu.cshtml" />
     <Content Include="Views\Personel\Partial\PersonelMenu.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,8 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\StokData\" />
-    <Folder Include="Views\UrunData\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

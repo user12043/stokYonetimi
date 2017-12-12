@@ -4,7 +4,6 @@
 
 function collapseWidth(width) {
     if (width < 700) {
-        console.log("HAHA");
         $("#navbar1").addClass("collapsed");
     } else {
         $("#navbar1").removeClass("collapsed");
@@ -14,3 +13,14 @@ function collapseWidth(width) {
 collapseWidth($(window).width());
 
 $(window).on("resize", function() { collapseWidth($(window).width()) });
+
+function formControl() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+    if (username && password) {
+        return true;
+    } else {
+        $("#pageMessage").html("Boş alan bırakma!").show();
+    }
+    return false;
+}
