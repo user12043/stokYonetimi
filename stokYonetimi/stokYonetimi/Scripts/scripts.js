@@ -14,13 +14,34 @@ collapseWidth($(window).width());
 
 $(window).on("resize", function() { collapseWidth($(window).width()) });
 
+function showMessage(message, type) {
+    var $element = $("#pageMessage");
+    if (type) {
+        $element.addClass("alert-" + type);
+    }
+    $element.html(message);
+    $element.show();
+}
+
 function formControl() {
     var username = $("#username").val();
     var password = $("#password").val();
     if (username && password) {
         return true;
     } else {
-        $("#pageMessage").html("Boş alan bırakma!").show();
+        showMessage("Boş alan bırakma!", "danger");
     }
     return false;
+}
+
+if (window.loginError) {
+    showMessage("Geçersiz giriş!", "danger");
+}
+
+if (window.authError) {
+    showMessage("Önce giriş yap!", "danger");
+}
+
+if (window.serverError) {
+    showMessage("Sunucu hatası! Daha sonra tekrar deneyin!");
 }

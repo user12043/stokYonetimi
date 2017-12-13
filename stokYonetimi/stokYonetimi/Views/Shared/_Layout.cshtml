@@ -24,12 +24,22 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-user navbar-right">
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-user"></span> Birisi İKİSİ</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-log-out"></span> Çıkış Yap</a>
-                    </li>
+                    @{
+                        var username = Session["loggedUserName"];
+                        var userId = Session["loggedUserId"];
+                        if (username != null && userId != null) {
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-user"></span>@username
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/Logout">
+                                    <span class="glyphicon glyphicon-log-out"></span> Çıkış Yap
+                                </a>
+                            </li>
+                        }
+                    }
                 </ul>
             </div>
             <!--/.nav-collapse -->
