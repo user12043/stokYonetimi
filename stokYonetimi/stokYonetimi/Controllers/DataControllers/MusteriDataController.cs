@@ -21,9 +21,9 @@ namespace stokYonetimi.Controllers.DataControllers {
             try {
                 var query = context.Database.SqlQuery<int>("SELECT NEXT VALUE FOR [dbo].[SEQ_musteriler_musteriNo]");
                 var task = query.FirstOrDefaultAsync();
-                musteri.musteriNo = task.Result;
+                musteri.MusteriNo = task.Result;
 
-                context.musteriler.Add(musteri);
+                context.Musteriler.Add(musteri);
 
                 context.SaveChanges();
 
@@ -38,7 +38,7 @@ namespace stokYonetimi.Controllers.DataControllers {
         [HttpPost]
         public ActionResult MusteriGuncelle(Musteri musteri) {
             try {
-                context.musteriler.AddOrUpdate(musteri);
+                context.Musteriler.AddOrUpdate(musteri);
                 context.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -50,8 +50,8 @@ namespace stokYonetimi.Controllers.DataControllers {
 
         // GET: MusteriData/MusteriSil/5
         public ActionResult MusteriSil(int id) {
-            Musteri musteri = context.musteriler.Find(id);
-            context.musteriler.Remove(musteri);
+            Musteri musteri = context.Musteriler.Find(id);
+            context.Musteriler.Remove(musteri);
             context.SaveChanges();
 
             return RedirectToActionPermanent("MusteriListele", "Personel");

@@ -8,24 +8,38 @@ namespace stokYonetimi.Models {
     [Table("siparisler")]
     public partial class Siparis {
         [Key]
-        public int siparisId { get; set; }
+        [Column("siparisId")]
+        [Display(Name = "siparisId", ResourceType = typeof(Language.ModelLang.siparis))]
+        public int SiparisId { get; set; }
 
-        public int miktar { get; set; }
+        [Column("miktar")]
+        [Display(Name = "miktar", ResourceType = typeof(Language.ModelLang.siparis))]
+        public int Miktar { get; set; }
 
-        public DateTime tarih { get; set; }
+        [Column("tarih")]
+        [Display(Name = "tarih", ResourceType = typeof(Language.ModelLang.siparis))]
+        public DateTime Tarih { get; set; }
 
-        public int fiyat { get; set; }
+        [Column("fiyat")]
+        [Display(Name = "fiyat", ResourceType = typeof(Language.ModelLang.siparis))]
+        public int Fiyat { get; set; }
 
-        public int musteriId { get; set; }
+        [Column("musteriId")]
+        [Display(Name = "musteriId", ResourceType = typeof(Language.ModelLang.siparis))]
+        public int MusteriId { get; set; }
 
-        public int urunId { get; set; }
+        [Column("urunId")]
+        [Display(Name = "urunId", ResourceType = typeof(Language.ModelLang.siparis))]
+        public int UrunId { get; set; }
 
-        public int faturaId { get; set; }
+        [Column("faturaId")]
+        [Display(Name = "faturaId", ResourceType = typeof(Language.ModelLang.siparis))]
+        public int FaturaId { get; set; }
 
-        public virtual Fatura fatura { get; set; }
+        public virtual Fatura Fatura { get; set; }
 
-        public virtual Musteri musteri { get; set; }
+        public virtual Musteri Musteri { get; set; }
 
-        public virtual Urun urun { get; set; }
+        public virtual Urun Urun { get; set; }
     }
 }

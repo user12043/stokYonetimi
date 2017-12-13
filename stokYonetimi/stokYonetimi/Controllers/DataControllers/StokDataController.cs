@@ -19,8 +19,8 @@ namespace stokYonetimi.Controllers.DataControllers {
         [HttpPost]
         public ActionResult StokEkle(Stok stok) {
             try {
-                stok.olusturulmaTarihi = DateTime.Now;
-                context.stoklar.Add(stok);
+                stok.OlusturulmaTarihi = DateTime.Now;
+                context.Stoklar.Add(stok);
                 context.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -34,7 +34,7 @@ namespace stokYonetimi.Controllers.DataControllers {
         [HttpPost]
         public ActionResult StokGuncelle(Stok stok) {
             try {
-                context.stoklar.AddOrUpdate(stok);
+                context.Stoklar.AddOrUpdate(stok);
                 context.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -47,8 +47,8 @@ namespace stokYonetimi.Controllers.DataControllers {
         // GET: StokData/StokSil/5
         public ActionResult StokSil(int id) {
             try {
-                Stok stok = context.stoklar.Find(id);
-                context.stoklar.Remove(stok);
+                Stok stok = context.Stoklar.Find(id);
+                context.Stoklar.Remove(stok);
                 context.SaveChanges();
 
                 return RedirectToAction("Index");

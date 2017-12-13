@@ -9,40 +9,40 @@ namespace stokYonetimi.Models {
             : base("name=DatabaseContext") {
         }
 
-        public virtual DbSet<Fatura> faturalar { get; set; }
-        public virtual DbSet<Kisi> kisiler { get; set; }
-        public virtual DbSet<Musteri> musteriler { get; set; }
-        public virtual DbSet<Personel> personeller { get; set; }
-        public virtual DbSet<Siparis> siparisler { get; set; }
-        public virtual DbSet<Stok> stoklar { get; set; }
-        public virtual DbSet<Urun> urunler { get; set; }
+        public virtual DbSet<Fatura> Faturalar { get; set; }
+        public virtual DbSet<Kisi> Kisiler { get; set; }
+        public virtual DbSet<Musteri> Musteriler { get; set; }
+        public virtual DbSet<Personel> Personeller { get; set; }
+        public virtual DbSet<Siparis> Siparisler { get; set; }
+        public virtual DbSet<Stok> Stoklar { get; set; }
+        public virtual DbSet<Urun> Urunler { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Entity<Fatura>()
-                .HasMany(e => e.siparisler)
-                .WithRequired(e => e.fatura)
+                .HasMany(e => e.Siparisler)
+                .WithRequired(e => e.Fatura)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Musteri>()
-                .HasMany(e => e.faturalar)
-                .WithRequired(e => e.musteri)
-                .HasForeignKey(e => e.musteriId)
+                .HasMany(e => e.Faturalar)
+                .WithRequired(e => e.Musteri)
+                .HasForeignKey(e => e.MusteriId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Musteri>()
-                .HasMany(e => e.siparisler)
-                .WithRequired(e => e.musteri)
-                .HasForeignKey(e => e.musteriId)
+                .HasMany(e => e.Siparisler)
+                .WithRequired(e => e.Musteri)
+                .HasForeignKey(e => e.MusteriId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Urun>()
-                .HasMany(e => e.siparisler)
-                .WithRequired(e => e.urun)
+                .HasMany(e => e.Siparisler)
+                .WithRequired(e => e.Urun)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Urun>()
-                .HasMany(e => e.stoklar)
-                .WithRequired(e => e.urun)
+                .HasMany(e => e.Stoklar)
+                .WithRequired(e => e.Urun)
                 .WillCascadeOnDelete(false);
         }
     }

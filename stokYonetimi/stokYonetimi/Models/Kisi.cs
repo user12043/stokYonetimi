@@ -8,22 +8,38 @@ namespace stokYonetimi.Models {
     [Table("kisiler")]
     public partial class Kisi {
         [Key]
-        public int kisiId { get; set; }
+        [Column("kisiId")]
+        [Display(Name = "kisiId", ResourceType = typeof(Language.ModelLang.kisi))]
+        public int KisiId { get; set; }
 
         [Required]
-        public string isim { get; set; }
+        [Column("isim")]
+        [Display(Name = "isim", ResourceType = typeof(Language.ModelLang.kisi))]
+        public string Isim { get; set; }
 
-        public string telefon { get; set; }
+        [Column("telefon")]
+        [Display(Name = "telefon", ResourceType = typeof(Language.ModelLang.kisi))]
+        public string Telefon { get; set; }
 
-        public string adres { get; set; }
+        [Column("adres")]
+        [Display(Name = "adres", ResourceType = typeof(Language.ModelLang.kisi))]
+        public string Adres { get; set; }
 
-        public string mailAdresi { get; set; }
+        [Column("mailAdresi")]
+        [Display(Name = "mailAdresi", ResourceType = typeof(Language.ModelLang.kisi))]
+        public string MailAdresi { get; set; }
 
         [Required]
-        public string sifre { get; set; }
+        [Column("sifre")]
+        [Display(Name = "sifre", ResourceType = typeof(Language.ModelLang.kisi))]
+        public string Sifre { get; set; }
 
-        public string resim { get; set; }
+        [Column("resim")]
+        [Display(Name = "resim", ResourceType = typeof(Language.ModelLang.kisi))]
+        public string Resim { get; set; }
 
-        public int rolu { get; set; }
+        [Column("rolu")]
+        [Display(Name = "rolu", ResourceType = typeof(Language.ModelLang.kisi))]
+        public int Rolu { get; set; }
     }
 }

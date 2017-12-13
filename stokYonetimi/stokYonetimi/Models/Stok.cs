@@ -8,16 +8,26 @@ namespace stokYonetimi.Models {
     [Table("stoklar")]
     public partial class Stok {
         [Key]
-        public int stokId { get; set; }
+        [Column("stokId")]
+        [Display(Name = "stokId", ResourceType = typeof(Language.ModelLang.stok))]
+        public int StokId { get; set; }
 
-        public DateTime olusturulmaTarihi { get; set; }
+        [Column("olusturulmaTarihi")]
+        [Display(Name = "olusturulmaTarihi", ResourceType = typeof(Language.ModelLang.stok))]
+        public DateTime OlusturulmaTarihi { get; set; }
 
-        public int miktar { get; set; }
+        [Column("miktar")]
+        [Display(Name = "miktar", ResourceType = typeof(Language.ModelLang.stok))]
+        public int Miktar { get; set; }
 
-        public int adetFiyat { get; set; }
+        [Column("adetFiyat")]
+        [Display(Name = "adetFiyat", ResourceType = typeof(Language.ModelLang.stok))]
+        public int AdetFiyat { get; set; }
 
-        public int urunId { get; set; }
+        [Column("urunId")]
+        [Display(Name = "urunId", ResourceType = typeof(Language.ModelLang.stok))]
+        public int UrunId { get; set; }
 
-        public virtual Urun urun { get; set; }
+        public virtual Urun Urun { get; set; }
     }
 }

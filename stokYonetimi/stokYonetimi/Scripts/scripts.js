@@ -34,14 +34,6 @@ function formControl() {
     return false;
 }
 
-if (window.loginError) {
-    showMessage("Geçersiz giriş!", "danger");
-}
-
-if (window.authError) {
-    showMessage("Önce giriş yap!", "danger");
-}
-
-if (window.serverError) {
-    showMessage("Sunucu hatası! Daha sonra tekrar deneyin!");
+if (window.errorMessage) {
+    showMessage(window.errorMessage, "danger");
 }

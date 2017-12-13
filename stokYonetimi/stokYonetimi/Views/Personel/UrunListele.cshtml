@@ -27,15 +27,15 @@
             @{
                 foreach (var urun in Model) {
                     <tr>
-                        <td>@urun.isim</td>
-                        <td>@urun.tur</td>
-                        <td>@urun.adetFiyat</td>
-                        <td>@urun.aciklama</td>
+                        <td>@urun.Isim</td>
+                        <td>@urun.Tur</td>
+                        <td>@urun.AdetFiyat</td>
+                        <td>@urun.Aciklama</td>
                         <td>
-                            <a href="/Personel/UrunGuncelle/@urun.urunId">
+                            <a href="/Personel/UrunGuncelle/@urun.UrunId">
                                 <span class="glyphicon glyphicon-edit"></span>
                             </a>
-                            <a href="/UrunData/UrunSil/@urun.urunId">
+                            <a href="/UrunData/UrunSil/@urun.UrunId">
                                 <span class="glyphicon glyphicon-minus-sign"></span>
                             </a>
                         </td>

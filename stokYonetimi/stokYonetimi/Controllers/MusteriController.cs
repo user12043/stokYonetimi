@@ -25,7 +25,7 @@ namespace stokYonetimi.Controllers {
         [KisiAuth(roleCode = 0)]
         // GET: Musteri/SiparisListele
         public ActionResult SiparisListele() {
-            List<Siparis> siparisList = context.siparisler.ToList();
+            List<Siparis> siparisList = context.Siparisler.ToList();
 
             return View(siparisList);
         }

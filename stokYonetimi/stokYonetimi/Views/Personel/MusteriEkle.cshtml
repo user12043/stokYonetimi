@@ -4,7 +4,8 @@
 
 @{ ViewData["activePage"] = 2; }
 @Html.Partial("Partial/PersonelMenu")
-
+@using stokYonetimi.Language.ModelLang
+@model stokYonetimi.Models.Musteri
 
 <div class="main-content">
     <div class="content">
@@ -14,34 +15,34 @@
 
             <div class="formContentLeft">
                 <div class="form-group">
-                    <label for="isim">Ad:</label>
+                    @Html.LabelFor(model => model.Isim)
                     <input class="form-control" id="isim" name="isim" type="text" autofocus="autofocus">
                 </div>
 
                 <div class="form-group">
-                    <label for="sifre">Şifre:</label>
+                    @Html.LabelFor(model => model.Sifre)
                     <input class="form-control" id="sifre" name="sifre" type="text">
                 </div>
 
                 <div class="form-group">
-                    <label for="telefon">Telefon:</label>
+                    @Html.LabelFor(model => model.Telefon)
                     <input class="form-control" type="text" id="telefon" name="telefon"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="mailAdresi">Mail Adresi:</label>
+                    @Html.LabelFor(model => model.MailAdresi)
                     <input class="form-control" type="email" id="mailAdresi" name="mailAdresi"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="adres">Adres:</label>
+                    @Html.LabelFor(model => model.Adres)
                     <textarea class="form-control" id="adres" name="adres"></textarea>
                 </div>
             </div>
 
-            <div class="formContentRight">                
+            <div class="formContentRight">
                 <div class="form-group">
-                    <label for="resim">Resim:</label>
+                    @Html.LabelFor(model => model.Resim)
                     <input type="file" id="resim" name="resim"/>
                 </div>
 
@@ -49,7 +50,7 @@
                     <img class="img img-thumbnail img-responsive" alt="Resim yok" height="400" width="400">
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <input class="form-control btn buttons" type="submit" value="Kaydet">
             </div>

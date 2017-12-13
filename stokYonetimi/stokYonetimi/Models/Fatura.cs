@@ -10,20 +10,26 @@ namespace stokYonetimi.Models {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
             "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Fatura() {
-            siparisler = new HashSet<Siparis>();
+            Siparisler = new HashSet<Siparis>();
         }
 
         [Key]
-        public int faturaId { get; set; }
+        [Column("faturaId")]
+        [Display(Name = "faturaId", ResourceType = typeof(Language.ModelLang.fatura))]
+        public int FaturaId { get; set; }
 
-        public int fiyat { get; set; }
+        [Column("fiyat")]
+        [Display(Name = "fiyat", ResourceType = typeof(Language.ModelLang.fatura))]
+        public int Fiyat { get; set; }
 
-        public int musteriId { get; set; }
+        [Column("musteriId")]
+        [Display(Name = "musteriId", ResourceType = typeof(Language.ModelLang.fatura))]
+        public int MusteriId { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
             "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Siparis> siparisler { get; set; }
+        public virtual ICollection<Siparis> Siparisler { get; set; }
 
-        public virtual Musteri musteri { get; set; }
+        public virtual Musteri Musteri { get; set; }
     }
 }

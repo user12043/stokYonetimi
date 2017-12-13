@@ -19,7 +19,7 @@ namespace stokYonetimi.Controllers.DataControllers {
         [HttpPost]
         public ActionResult UrunEkle(Urun urun) {
             try {
-                context.urunler.Add(urun);
+                context.Urunler.Add(urun);
                 context.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -33,7 +33,7 @@ namespace stokYonetimi.Controllers.DataControllers {
         [HttpPost]
         public ActionResult UrunGuncelle(Urun urun) {
             try {
-                context.urunler.AddOrUpdate(urun);
+                context.Urunler.AddOrUpdate(urun);
                 context.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -46,8 +46,8 @@ namespace stokYonetimi.Controllers.DataControllers {
         // GET: UrunData/UrunSil/5
         public ActionResult UrunSil(int id) {
             try {
-                Urun urun = context.urunler.Find(id);
-                context.urunler.Remove(urun);
+                Urun urun = context.Urunler.Find(id);
+                context.Urunler.Remove(urun);
                 context.SaveChanges();
 
                 return RedirectToAction("Index");

@@ -20,11 +20,11 @@ namespace stokYonetimi.Controllers {
             var password = collection.Get("password");
             if (username != "" && password != "") {
                 try {
-                    var kisi = context.kisiler.FirstOrDefault(k => (k.mailAdresi == username && k.sifre == password));
+                    var kisi = context.Kisiler.FirstOrDefault(k => (k.MailAdresi == username && k.Sifre == password));
                     if (kisi != null) {
-                        Session["loggedUserName"] = kisi.isim;
-                        Session["loggedUserId"] = kisi.kisiId;
-                        switch (kisi.rolu) {
+                        Session["loggedUserName"] = kisi.Isim;
+                        Session["loggedUserId"] = kisi.KisiId;
+                        switch (kisi.Rolu) {
                             case 0:
                                 Session["loggedUserRole"] = 0;
                                 return RedirectToActionPermanent("SiparisListele", "Musteri");
@@ -33,12 +33,17 @@ namespace stokYonetimi.Controllers {
                                 return RedirectToActionPermanent("MusteriListele", "Personel");
                         }
                     }
+                    else {
+                        TempData["loginError"] = true;
+                    }
                 }
                 catch (Exception e) {
                     Console.WriteLine(e);
                 }
             }
-            TempData["loginError"] = true;
+            else {
+                TempData["emptyInputError"] = true;
+            }
             return View();
         }
 

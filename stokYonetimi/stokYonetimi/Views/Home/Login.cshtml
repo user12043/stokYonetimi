@@ -1,30 +1,10 @@
-﻿@{
+﻿@using stokYonetimi.Language.Messages
+@{
     ViewBag.Title = "Login";
-
-    try {
-        if (TempData["loginError"] != null && (bool) TempData["loginError"]) {
-            <script>
-                window.loginError = true;
-            </script>
-        }
-
-        if (TempData["authError"] != null && ((bool) TempData["authError"])) {
-            <script>
-                window.authError = true;
-            </script>
-        }
-    }
-    catch (Exception e) {
-        <script>
-            window.serverError = true;
-        </script>
-    }
 }
 
-<h2>Index</h2>
-
 <div class="container">
-    <div class="row">
+    <div class="row main">
         <div class="panel-heading">
             <div class="panel-title text-center">
                 <h1 class="title">Company Name</h1>
@@ -32,8 +12,27 @@
             </div>
         </div>
         <div class="main-login main-center">
-            <div class="alert" id="pageMessage" style="display: none"></div>
-            <form class="form-horizontal" method="post" onsubmit="return formControl()">
+            @{
+                string message = null;
+
+                try {
+                    if (TempData["loginError"] != null && (bool) TempData["loginError"]) {
+                        message = @messages.loginError;
+                    } else if (TempData["authError"] != null && ((bool) TempData["authError"])) {
+                        message = @messages.authError;
+                    } else if (TempData["emptyInputError"] != null && ((bool) TempData["emptyInputError"])) {
+                        message = messages.emptyInputError;
+                    }
+                }
+                catch (Exception e) {
+                    message = @messages.serverError;
+                }
+
+                if (message != null) {
+                    <div class="alert alert-danger" id="pageMessage">@message</div>
+                }
+            }
+            <form class="form-horizontal" method="post">
                 <div class="form-group">
                     <label for="username" class="control-label">Username</label>
                     <div>
@@ -109,6 +108,8 @@
         font-size: 11px;
         padding-top: 3px;
     }
+
+    .main { margin-top: 50px; }
 
     .main-login {
         background-color: lightgray;

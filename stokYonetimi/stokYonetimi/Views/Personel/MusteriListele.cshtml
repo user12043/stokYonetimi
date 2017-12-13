@@ -28,16 +28,16 @@
             @{
                 foreach (var musteri in Model) {
                     <tr>
-                        <td>@musteri.musteriNo</td>
-                        <td>@musteri.isim</td>
-                        <td>@musteri.telefon</td>
-                        <td>@musteri.mailAdresi</td>
-                        <td>@musteri.adres</td>
+                        <td>@musteri.MusteriNo</td>
+                        <td>@musteri.Isim</td>
+                        <td>@musteri.Telefon</td>
+                        <td>@musteri.MailAdresi</td>
+                        <td>@musteri.Adres</td>
                         <td>
-                            <a href="/Personel/MusteriGuncelle/@musteri.kisiId">
+                            <a href="/Personel/MusteriGuncelle/@musteri.KisiId">
                                 <span class="glyphicon glyphicon-edit"></span>
                             </a>
-                            <a href="/MusteriData/MusteriSil/@musteri.kisiId">
+                            <a href="/MusteriData/MusteriSil/@musteri.KisiId">
                                 <span class="glyphicon glyphicon-minus-sign"></span>
                             </a>
                         </td>

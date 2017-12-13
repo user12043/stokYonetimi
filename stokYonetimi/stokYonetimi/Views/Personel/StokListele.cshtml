@@ -27,15 +27,15 @@
             @{
                 foreach (var stok in Model) {
                     <tr>
-                        <td>@stok.urun.isim</td>
-                        <td>@stok.miktar</td>
-                        <td>@stok.adetFiyat</td>
-                        <td>@stok.olusturulmaTarihi</td>
+                        <td>@stok.Urun.Isim</td>
+                        <td>@stok.Miktar</td>
+                        <td>@stok.AdetFiyat</td>
+                        <td>@stok.OlusturulmaTarihi</td>
                         <td>
-                            <a href="/Personel/StokGuncelle/@stok.stokId">
+                            <a href="/Personel/StokGuncelle/@stok.StokId">
                                 <span class="glyphicon glyphicon-edit"></span>
                             </a>
-                            <a href="/StokData/StokSil/@stok.stokId">
+                            <a href="/StokData/StokSil/@stok.StokId">
                                 <span class="glyphicon glyphicon-minus-sign"></span>
                             </a>
                         </td>

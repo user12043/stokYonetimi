@@ -21,9 +21,9 @@
                     <label for="urunId">Ürün:</label>
                     <select id="urunId" name="urunId" size="1">
                         @foreach (var urun in Model) {
-                            string selected = (urun.urunId == ViewBag.stok.urunId) ? "selected" : "";
+                            string selected = (urun.UrunId == ViewBag.stok.urunId) ? "selected" : "";
 
-                            <option value="@urun.urunId" selected="@selected">@urun.isim</option>
+                            <option value="@urun.UrunId" selected="@selected">@urun.Isim</option>
                         }
                     </select>
                 </div>
