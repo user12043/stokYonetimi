@@ -123,12 +123,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CustomAttributes\PersonelAuthAttribute.cs" />
+    <Compile Include="Controllers\CustomAttributes\KisiAuthAttribute.cs" />
     <Compile Include="Controllers\DataControllers\MusteriDataController.cs" />
     <Compile Include="Controllers\DataControllers\StokDataController.cs" />
     <Compile Include="Controllers\DataControllers\UrunDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\CustomAttributes\MusteriAuthAttribute.cs" />
     <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Global.asax.cs">

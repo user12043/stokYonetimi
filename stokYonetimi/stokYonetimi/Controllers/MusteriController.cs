@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using stokYonetimi.Controllers.CustomAttributes;
 using stokYonetimi.Models;
 
 namespace stokYonetimi.Controllers {
     public class MusteriController : Controller {
         private DatabaseContext context = new DatabaseContext();
 
-        [MusteriAuth]
+        [KisiAuth(roleCode = 0)]
         // GET: Musteri
         public ActionResult Index() {
             return RedirectToAction("SiparisListele");
         }
 
-        [MusteriAuth]
+        [KisiAuth(roleCode = 0)]
         // GET: Musteri/SiparisVer
         public ActionResult SiparisVer() {
             return View();
         }
 
-        [MusteriAuth]
+        [KisiAuth(roleCode = 0)]
         // GET: Musteri/SiparisListele
         public ActionResult SiparisListele() {
             List<Siparis> siparisList = context.siparisler.ToList();
@@ -29,7 +30,7 @@ namespace stokYonetimi.Controllers {
             return View(siparisList);
         }
 
-        [MusteriAuth]
+        [KisiAuth(roleCode = 0)]
         // GET: Musteri/SepeteGit
         public ActionResult SepeteGit() {
             return View();

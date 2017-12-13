@@ -10,13 +10,13 @@ namespace stokYonetimi.Controllers {
     public class PersonelController : Controller {
         private DatabaseContext context = new DatabaseContext();
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel
         public ActionResult Index() {
             return RedirectToAction("UrunListele");
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/StokEkle
         public ActionResult StokEkle() {
             var urunler = context.urunler.ToList();
@@ -24,7 +24,7 @@ namespace stokYonetimi.Controllers {
             return View(urunler);
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/StokGuncelle
         public ActionResult StokGuncelle(int id) {
             var urunler = context.urunler.ToList();
@@ -34,7 +34,7 @@ namespace stokYonetimi.Controllers {
             return View(urunler);
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/StokListele
         public ActionResult StokListele() {
             var stoklar = context.stoklar.ToList();
@@ -42,13 +42,13 @@ namespace stokYonetimi.Controllers {
             return View(stoklar);
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/UrunEkle
         public ActionResult UrunEkle() {
             return View();
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/UrunGuncelle
         public ActionResult UrunGuncelle(int id) {
             Urun urun = context.urunler.Find(id);
@@ -56,7 +56,7 @@ namespace stokYonetimi.Controllers {
             return View(urun);
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/UrunListele
         public ActionResult UrunListele() {
             IEnumerable<Urun> urunler = context.urunler.ToList();
@@ -64,13 +64,13 @@ namespace stokYonetimi.Controllers {
             return View(urunler);
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/MusteriEkle
         public ActionResult MusteriEkle() {
             return View();
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/MusteriGuncelle
         public ActionResult MusteriGuncelle(int id) {
             Musteri musteri = context.musteriler.Find(id);
@@ -78,7 +78,7 @@ namespace stokYonetimi.Controllers {
             return View(musteri);
         }
 
-        [PersonelAuth]
+        [KisiAuth(roleCode = 1)]
         // GET: Personel/MusteriListele
         public ActionResult MusteriListele() {
             IEnumerable<Musteri> musteriler = context.musteriler.ToList();

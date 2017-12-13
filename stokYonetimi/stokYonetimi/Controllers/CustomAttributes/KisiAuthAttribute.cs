@@ -6,11 +6,13 @@ using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace stokYonetimi.Controllers.CustomAttributes {
-    public class PersonelAuthAttribute : ActionFilterAttribute {
+    public class KisiAuthAttribute : ActionFilterAttribute {
+        public int roleCode { get; set; }
+
         public override void OnActionExecuting(ActionExecutingContext context) {
             var session = context.Controller.ControllerContext.HttpContext.Session;
             var role = session["loggedUserRole"];
-            if (role == null || (int) role != 1 || session["loggedUserId"] == null) {
+            if (role == null || (int) role != this.roleCode || session["loggedUserId"] == null) {
                 context.Controller.TempData["authError"] = true;
                 context.Result = new RedirectToRouteResult(new RouteValueDictionary {
                     {"Controller", "Home"},
