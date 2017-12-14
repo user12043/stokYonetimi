@@ -1,22 +1,23 @@
 ﻿@{
-    ViewBag.Title = "Stok Ekle";
+    ViewBag.Title = headers.stokEkle;
 }
 
 @{ ViewData["activePage"] = 1; }
 @Html.Partial("Partial/PersonelMenu")
-
+@using stokYonetimi.Language.ModelLang
+@using stokYonetimi.Language.PageContents
 @model IEnumerable<stokYonetimi.Models.Urun>
 
 <div class="main-content">
     <div class="content">
 
         <form action="/StokData/StokEkle" method="post">
-            <h3>Ürün Ekle</h3>
+            <h3>@headers.stokEkle</h3>
 
             <div class="formContentLeft">
                 <div class="form-group">
-                    <label for="urunId">Ürün:</label>
-                    <select id="urunId" name="urunId" size="1">
+                    <label for="urunId">@stok.urun:</label>
+                    <select id="urunId" class="form-control" name="urunId" size="1">
                         @foreach (var urun in Model) {
                             <option value="@urun.UrunId">@urun.Isim</option>
                         }
@@ -24,18 +25,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="miktar">Miktar:</label>
+                    <label for="miktar">@stok.miktar:</label>
                     <input class="form-control" id="miktar" name="miktar" type="text"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="adetFiyat">Adet Fiyat:</label>
+                    <label for="adetFiyat">@stok.adetFiyat:</label>
                     <input class="form-control" type="text" id="adetFiyat" name="adetFiyat"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <input class="form-control btn buttons" type="submit" value="Kaydet"/>
+                <input class="form-control btn buttons" type="submit" value="@commons.set"/>
             </div>
         </form>
     </div>

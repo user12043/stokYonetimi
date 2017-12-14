@@ -79,11 +79,29 @@ namespace stokYonetimi.Language.ModelLang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer.
+        /// </summary>
+        public static string musteri {
+            get {
+                return ResourceManager.GetString("musteri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer ID.
         /// </summary>
         public static string musteriId {
             get {
                 return ResourceManager.GetString("musteriId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders.
+        /// </summary>
+        public static string siparisler {
+            get {
+                return ResourceManager.GetString("siparisler", resourceCulture);
             }
         }
     }

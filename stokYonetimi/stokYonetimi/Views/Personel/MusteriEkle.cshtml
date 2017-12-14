@@ -1,58 +1,59 @@
 ﻿@{
-    ViewBag.Title = "Müşteri Ekle";
+    ViewBag.Title = headers.musteriEkle;
 }
 
 @{ ViewData["activePage"] = 2; }
 @Html.Partial("Partial/PersonelMenu")
 @using stokYonetimi.Language.ModelLang
+@using stokYonetimi.Language.PageContents
 @model stokYonetimi.Models.Musteri
 
 <div class="main-content">
     <div class="content">
 
         <form action="/MusteriData/MusteriEkle" method="post">
-            <h3>Müşteri Ekle</h3>
+            <h3>@headers.musteriEkle</h3>
 
             <div class="formContentLeft">
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Isim)
+                    <label for="isim">@kisi.isim:</label>
                     <input class="form-control" id="isim" name="isim" type="text" autofocus="autofocus">
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Sifre)
+                    <label for="sifre">@kisi.sifre:</label>
                     <input class="form-control" id="sifre" name="sifre" type="text">
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Telefon)
+                    <label for="telefon">@kisi.telefon:</label>
                     <input class="form-control" type="text" id="telefon" name="telefon"/>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.MailAdresi)
+                    <label for="mailAdresi">@kisi.mailAdresi:</label>
                     <input class="form-control" type="email" id="mailAdresi" name="mailAdresi"/>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Adres)
+                    <label for="adres">@kisi.adres:</label>
                     <textarea class="form-control" id="adres" name="adres"></textarea>
                 </div>
             </div>
 
             <div class="formContentRight">
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Resim)
+                    <label for="resim">@kisi.resim:</label>
                     <input type="file" id="resim" name="resim"/>
                 </div>
 
                 <div class="form-group">
-                    <img class="img img-thumbnail img-responsive" alt="Resim yok" height="400" width="400">
+                    <img class="img img-thumbnail img-responsive" alt="@commons.noPicture" height="400" width="400">
                 </div>
             </div>
 
             <div class="form-group">
-                <input class="form-control btn buttons" type="submit" value="Kaydet">
+                <input class="form-control btn buttons" type="submit" value="@commons.set">
             </div>
         </form>
     </div>

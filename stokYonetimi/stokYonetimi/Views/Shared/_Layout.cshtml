@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using stokYonetimi.Language.PageContents
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -20,9 +21,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Stok Yönetimi</a>
+                <a class="navbar-brand" href="/Home/Index">@commons.appName</a>
             </div>
-            <div id="navbar" class="collapse navbar-collapse">
+            <div id="navbar" class="collapse navbar-right navbar-collapse">
                 <ul class="nav navbar-nav navbar-user navbar-right">
                     @{
                         var username = Session["loggedUserName"];
@@ -35,17 +36,37 @@
                             </li>
                             <li>
                                 <a href="/Home/Logout">
-                                    <span class="glyphicon glyphicon-log-out"></span>&nbsp;Çıkış Yap
+                                    <span class="glyphicon glyphicon-log-out"></span>&nbsp;@commons.logout
                                 </a>
                             </li>
                         } else {
                             <li>
                                 <a href="/Home/Login">
-                                    <span class="glyphicon glyphicon-log-in"></span>&nbsp;Giriş Yap
+                                    <span class="glyphicon glyphicon-log-in"></span>&nbsp;@commons.login
                                 </a>
                             </li>
                         }
+
+                        string[] actives = new string[2];
+                        string currentLang = (string) Session["lang"];
+                        int i = -1;
+
+                        if (currentLang == "tr") {
+                            i = 0;
+                        } else if (currentLang == "en") {
+                            i = 1;
+                        }
+
+                        actives[i] = "background-color: gray;";
                     }
+
+
+                    <li style="@actives[0]">
+                        <a href="/Home/ChangeLang?lang=tr&returnUrl=@Request.RawUrl">Türkçe</a>
+                    </li>
+                    <li style="@actives[1]">
+                        <a href="/Home/ChangeLang?lang=en&returnUrl=@Request.RawUrl">English</a>
+                    </li>
                 </ul>
             </div>
             <!--/.nav-collapse -->

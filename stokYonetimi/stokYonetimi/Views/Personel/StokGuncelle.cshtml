@@ -1,45 +1,47 @@
 ﻿@{
-    ViewBag.Title = "Stok Güncelle";
+    ViewBag.Title = headers.stokGuncelle;
 }
 
 @{ ViewData["activePage"] = 1; }
 @Html.Partial("Partial/PersonelMenu")
 
-@model IEnumerable<stokYonetimi.Models.Urun>
+@using stokYonetimi.Language.ModelLang
+@using stokYonetimi.Language.PageContents
+@model stokYonetimi.Models.Stok
 
 <div class="main-content">
     <div class="content">
 
         <form action="/StokData/StokGuncelle" method="post">
-            <h3>Stok Güncelle</h3>
+            <h3>@headers.stokGuncelle</h3>
 
             <div class="formContentLeft">
-                <input type="hidden" id="stokId" name="stokId" value="@ViewBag.stok.stokId"/>
-                <input type="hidden" id="olusturulmaTarihi" name="olusturulmaTarihi" value="@ViewBag.stok.olusturulmaTarihi"/>
+                <input type="hidden" id="stokId" name="stokId" value="@Model.StokId"/>
+                <input type="hidden" id="olusturulmaTarihi" name="olusturulmaTarihi" value="@Model.OlusturulmaTarihi"/>
 
                 <div class="form-group">
-                    <label for="urunId">Ürün:</label>
-                    <select id="urunId" name="urunId" size="1">
-                        @foreach (var urun in Model) {
-                            string selected = (urun.UrunId == ViewBag.stok.urunId) ? "selected" : "";
+                    <label for="urunId">@stok.urun:</label>
+                    <select id="urunId" class="form-control" name="urunId" size="1">
+                        @foreach (var urun in ViewBag.urunler) {
+                            string selected = (urun.UrunId == Model.UrunId) ? " selected" : "";
 
-                            <option value="@urun.UrunId" selected="@selected">@urun.Isim</option>
+                            <option value="@urun.UrunId"@selected>@urun.Isim</option>
                         }
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="miktar">Miktar:</label>
-                    <input class="form-control" id="miktar" name="miktar" type="text" value="@ViewBag.stok.miktar"/>
+                    <label for="miktar">@stok.miktar:</label>
+                    <input class="form-control" id="miktar" name="miktar" type="text" value="@Model.Miktar"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="adetFiyat">Adet Fiyat:</label>
-                    <input class="form-control" type="text" id="adetFiyat" name="adetFiyat" value="@ViewBag.stok.adetFiyat"/>
+                    <label for="adetFiyat">@stok.adetFiyat:</label>
+                    <input class="form-control" type="text" id="adetFiyat" name="adetFiyat" value="@Model.AdetFiyat"/>
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control btn buttons" type="submit" value="Kaydet"/>
+                    <input class="form-control btn buttons" type="submit" value="@commons.set"/>
                 </div>
             </div>
         </form>

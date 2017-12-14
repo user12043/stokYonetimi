@@ -123,7 +123,13 @@
   <data name="fiyat" xml:space="preserve">
     <value>Fiyat</value>
   </data>
+  <data name="musteri" xml:space="preserve">
+    <value>Müşteri</value>
+  </data>
   <data name="musteriId" xml:space="preserve">
     <value>Müşteri ID</value>
+  </data>
+  <data name="siparisler" xml:space="preserve">
+    <value>Siparişler</value>
   </data>
 </root>

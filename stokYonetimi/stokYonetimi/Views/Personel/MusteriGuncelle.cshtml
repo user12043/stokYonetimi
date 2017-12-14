@@ -1,62 +1,64 @@
 ﻿@{
-    ViewBag.Title = "Müşteri Güncelle";
+    ViewBag.Title = headers.musteriGuncelle;
 }
 
 @{ ViewData["activePage"] = 2; }
 @Html.Partial("Partial/PersonelMenu")
 
+@using stokYonetimi.Language.ModelLang
+@using stokYonetimi.Language.PageContents
 @model stokYonetimi.Models.Musteri
 
 <div class="main-content">
     <div class="content">
 
         <form action="/MusteriData/MusteriGuncelle" method="post">
-            <h3>Müşteri Güncelle</h3>
+            <h3>@headers.musteriGuncelle</h3>
 
             <div class="formContentLeft">
                 <input type="hidden" name="kisiId" value="@Model.KisiId"/>
-                
-                <input type="hidden" name="musteriNo" value="@Model.MusteriNo" />
+
+                <input type="hidden" name="musteriNo" value="@Model.MusteriNo"/>
 
                 <div class="form-group">
-                    <label for="isim">Ad:</label>
+                    <label for="isim">@kisi.isim:</label>
                     <input class="form-control" id="isim" name="isim" type="text" autofocus="autofocus" value="@Model.Isim">
                 </div>
 
                 <div class="form-group">
-                    <label for="sifre">Şifre:</label>
+                    <label for="sifre">@kisi.sifre:</label>
                     <input class="form-control" id="sifre" name="sifre" type="text" value="@Model.Sifre">
                 </div>
 
                 <div class="form-group">
-                    <label for="telefon">Telefon:</label>
+                    <label for="telefon">@kisi.telefon:</label>
                     <input class="form-control" type="text" id="telefon" name="telefon" value="@Model.Telefon"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="mailAdresi">Mail Adresi:</label>
+                    <label for="mailAdresi">@kisi.mailAdresi:</label>
                     <input class="form-control" type="email" id="mailAdresi" name="mailAdresi" value="@Model.MailAdresi"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="adres">Adres:</label>
+                    <label for="adres">@kisi.adres:</label>
                     <textarea class="form-control" id="adres" name="adres">@Model.Adres</textarea>
                 </div>
             </div>
 
             <div class="formContentRight">
                 <div class="form-group">
-                    <label for="resim">Resim:</label>
-                    <input type="file" id="resim" name="resim" />
+                    <label for="resim">@kisi.resim:</label>
+                    <input type="file" id="resim" name="resim"/>
                 </div>
 
                 <div class="form-group">
-                    <img class="img img-thumbnail img-responsive" alt="Resim yok" height="400" width="400">
+                    <img class="img img-thumbnail img-responsive" alt="@commons.noPicture" height="400" width="400">
                 </div>
             </div>
 
             <div class="form-group">
-                <input class="form-control btn buttons" type="submit" value="Kaydet">
+                <input class="form-control btn buttons" type="submit" value="@commons.set">
             </div>
         </form>
     </div>

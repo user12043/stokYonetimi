@@ -1,26 +1,28 @@
 ﻿@{
-    ViewBag.Title = "Stok Listele";
+    ViewBag.Title = headers.stokListele;
 }
 
 @{ ViewData["activePage"] = 1; }
 @Html.Partial("Partial/PersonelMenu")
 
+@using stokYonetimi.Language.ModelLang
+@using stokYonetimi.Language.PageContents
 @model IEnumerable<stokYonetimi.Models.Stok>
 
 <div class="main-content">
 
     <div class="content">
         <button class="btn buttons addButton btn-lg" onclick="location.href = 'StokEkle'">
-            <span class="glyphicon glyphicon-plus-sign"></span>
+            <a href="#"><span class="glyphicon glyphicon-plus-sign"></span></a>
         </button>
         <table class="table table-bordered listTable">
             <thead>
             <tr>
-                <th>Ürün</th>
-                <th>Miktar</th>
-                <th>Adet Fiyat</th>
-                <th>Oluşturulma Tarihi</th>
-                <th>İşlemler</th>
+                <th>@stok.urun</th>
+                <th>@stok.miktar</th>
+                <th>@stok.adetFiyat</th>
+                <th>@stok.olusturulmaTarihi</th>
+                <th>@commons.options</th>
             </tr>
             </thead>
             <tbody>

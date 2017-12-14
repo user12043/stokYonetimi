@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace stokYonetimi.Language.ModelLang {
+namespace stokYonetimi.Language.PageContents {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace stokYonetimi.Language.ModelLang {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class siparis {
+    public class musteriMenu {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal siparis() {
+        internal musteriMenu() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace stokYonetimi.Language.ModelLang {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("stokYonetimi.Language.ModelLang.siparis", typeof(siparis).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("stokYonetimi.Language.PageContents.musteriMenu", typeof(musteriMenu).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,92 +61,29 @@ namespace stokYonetimi.Language.ModelLang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invoice.
+        ///   Looks up a localized string similar to Checkout orders.
         /// </summary>
-        public static string fatura {
+        public static string sepeteGit {
             get {
-                return ResourceManager.GetString("fatura", resourceCulture);
+                return ResourceManager.GetString("sepeteGit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invoice ID.
+        ///   Looks up a localized string similar to Orders.
         /// </summary>
-        public static string faturaId {
+        public static string siparisListele {
             get {
-                return ResourceManager.GetString("faturaId", resourceCulture);
+                return ResourceManager.GetString("siparisListele", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cost.
+        ///   Looks up a localized string similar to New order.
         /// </summary>
-        public static string fiyat {
+        public static string siparisVer {
             get {
-                return ResourceManager.GetString("fiyat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Quantity.
-        /// </summary>
-        public static string miktar {
-            get {
-                return ResourceManager.GetString("miktar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Customer.
-        /// </summary>
-        public static string musteri {
-            get {
-                return ResourceManager.GetString("musteri", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Customer ID.
-        /// </summary>
-        public static string musteriId {
-            get {
-                return ResourceManager.GetString("musteriId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order ID.
-        /// </summary>
-        public static string siparisId {
-            get {
-                return ResourceManager.GetString("siparisId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Date.
-        /// </summary>
-        public static string tarih {
-            get {
-                return ResourceManager.GetString("tarih", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Product.
-        /// </summary>
-        public static string urun {
-            get {
-                return ResourceManager.GetString("urun", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Product ID.
-        /// </summary>
-        public static string urunId {
-            get {
-                return ResourceManager.GetString("urunId", resourceCulture);
+                return ResourceManager.GetString("siparisVer", resourceCulture);
             }
         }
     }

@@ -9,7 +9,31 @@ namespace stokYonetimi.Controllers {
     public class HomeController : Controller {
         private DatabaseContext context = new DatabaseContext();
 
-        // GET: Home
+        // GET: Home/Index
+        public ActionResult Index() {
+            var id = Session["loggedUserId"];
+            var role = Session["loggedUserRole"];
+            if (id != null && role != null) {
+                if ((int) role == 0) {
+                    return RedirectToActionPermanent("SiparisListele", "Musteri");
+                }
+                else if ((int) role == 1) {
+                    return RedirectToActionPermanent("MusteriListele", "Personel");
+                }
+            }
+            return RedirectToAction("Login");
+        }
+
+        // GET: Home/ChangeLang
+        public ActionResult ChangeLang(string lang, string returnUrl) {
+            if (lang != null && returnUrl != null) {
+                Session["lang"] = lang;
+            }
+
+            return Redirect(returnUrl);
+        }
+
+        // GET: Home/Login
         public ActionResult Login() {
             return View();
         }
@@ -34,7 +58,7 @@ namespace stokYonetimi.Controllers {
                         }
                     }
                     else {
-                        TempData["loginError"] = true;
+                        TempData["errorMessage"] = Language.Messages.messages.loginError;
                     }
                 }
                 catch (Exception e) {
@@ -42,7 +66,7 @@ namespace stokYonetimi.Controllers {
                 }
             }
             else {
-                TempData["emptyInputError"] = true;
+                TempData["errorMessage"] = Language.Messages.messages.emptyInputError;
             }
             return View();
         }

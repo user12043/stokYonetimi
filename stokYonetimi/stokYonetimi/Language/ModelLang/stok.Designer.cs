@@ -97,6 +97,15 @@ namespace stokYonetimi.Language.ModelLang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string urun {
+            get {
+                return ResourceManager.GetString("urun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product ID.
         /// </summary>
         public static string urunId {

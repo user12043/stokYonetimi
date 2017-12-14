@@ -117,22 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="adetFiyat" xml:space="preserve">
-    <value>Unit Price (In Stock)</value>
+  <data name="musteriEkle" xml:space="preserve">
+    <value>Müşteri Ekle</value>
   </data>
-  <data name="miktar" xml:space="preserve">
-    <value>Quantity</value>
+  <data name="musteriGuncelle" xml:space="preserve">
+    <value>Müşteri Güncelle</value>
   </data>
-  <data name="olusturulmaTarihi" xml:space="preserve">
-    <value>Crated Date</value>
+  <data name="musteriListele" xml:space="preserve">
+    <value>Müşteriler</value>
   </data>
-  <data name="stokId" xml:space="preserve">
-    <value>Stock ID</value>
+  <data name="stokEkle" xml:space="preserve">
+    <value>Stok Ekle</value>
   </data>
-  <data name="urun" xml:space="preserve">
-    <value>Product</value>
+  <data name="stokGuncelle" xml:space="preserve">
+    <value>Stok Güncelle</value>
   </data>
-  <data name="urunId" xml:space="preserve">
-    <value>Product ID</value>
+  <data name="stokListele" xml:space="preserve">
+    <value>Stoklar</value>
+  </data>
+  <data name="urunEkle" xml:space="preserve">
+    <value>Ürün Ekle</value>
+  </data>
+  <data name="urunGuncelle" xml:space="preserve">
+    <value>Ürün Güncelle</value>
+  </data>
+  <data name="urunListele" xml:space="preserve">
+    <value>Ürünler</value>
   </data>
 </root>

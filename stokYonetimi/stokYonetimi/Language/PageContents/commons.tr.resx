@@ -117,22 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="adetFiyat" xml:space="preserve">
-    <value>Unit Price (In Stock)</value>
+  <data name="appName" xml:space="preserve">
+    <value>Stok Yönetimi</value>
   </data>
-  <data name="miktar" xml:space="preserve">
-    <value>Quantity</value>
+  <data name="companyName" xml:space="preserve">
+    <value>Bir Şirket</value>
   </data>
-  <data name="olusturulmaTarihi" xml:space="preserve">
-    <value>Crated Date</value>
+  <data name="enterPasswordHere" xml:space="preserve">
+    <value>Şifrenizi buraya girin</value>
   </data>
-  <data name="stokId" xml:space="preserve">
-    <value>Stock ID</value>
+  <data name="enterUsernameHere" xml:space="preserve">
+    <value>Kullanıcı adınızı buraya girin</value>
   </data>
-  <data name="urun" xml:space="preserve">
-    <value>Product</value>
+  <data name="login" xml:space="preserve">
+    <value>Giriş Yap</value>
   </data>
-  <data name="urunId" xml:space="preserve">
-    <value>Product ID</value>
+  <data name="logout" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="noPicture" xml:space="preserve">
+    <value>Resim Yok</value>
+  </data>
+  <data name="options" xml:space="preserve">
+    <value>İşlemler</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="set" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Kullanıcı adı</value>
   </data>
 </root>

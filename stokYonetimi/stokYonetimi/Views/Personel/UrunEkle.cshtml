@@ -1,5 +1,7 @@
-﻿@{
-    ViewBag.Title = "Ürün Ekle";
+﻿@using stokYonetimi.Language.ModelLang
+@using stokYonetimi.Language.PageContents
+@{
+    ViewBag.Title = headers.urunEkle;
 }
 
 @{ ViewData["activePage"] = 0; }
@@ -10,43 +12,43 @@
     <div class="content">
 
         <form action="/UrunData/UrunEkle" method="post">
-            <h3>Ürün Ekle</h3>
+            <h3>@headers.urunEkle</h3>
 
             <div class="formContentLeft">
                 <div class="form-group">
-                    <label for="isim">Ad:</label>
+                    <label for="isim">@urun.isim:</label>
                     <input class="form-control" id="isim" name="isim" type="text" autofocus="autofocus">
                 </div>
 
                 <div class="form-group">
-                    <label for="tur">Tür:</label>
+                    <label for="tur">@urun.tur:</label>
                     <input class="form-control" id="tur" name="tur" type="text">
                 </div>
 
                 <div class="form-group">
-                    <label for="adetFiyat">Adet Fiyat:</label>
+                    <label for="adetFiyat">@urun.adetFiyat:</label>
                     <input class="form-control" type="text" id="adetFiyat" name="adetFiyat"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="aciklama">Açıklama:</label>
+                    <label for="aciklama">@urun.aciklama:</label>
                     <textarea class="form-control" id="aciklama" name="aciklama"></textarea>
                 </div>
             </div>
 
             <div class="formContentRight">
                 <div class="form-group">
-                    <label for="resim">Resim:</label>
+                    <label for="resim">@urun.resim:</label>
                     <input type="file" id="resim" name="resim"/>
                 </div>
 
                 <div class="form-group">
-                    <img class="img img-thumbnail img-responsive" alt="Resim yok" height="400" width="400">
+                    <img class="img img-thumbnail img-responsive" alt="@commons.noPicture" height="400" width="400">
                 </div>
             </div>
 
             <div class="form-group">
-                <input class="form-control btn buttons" type="submit" value="Kaydet">
+                <input class="form-control btn buttons" type="submit" value="@commons.set">
             </div>
         </form>
     </div>

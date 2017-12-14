@@ -13,7 +13,7 @@ namespace stokYonetimi.Controllers.CustomAttributes {
             var session = context.Controller.ControllerContext.HttpContext.Session;
             var role = session["loggedUserRole"];
             if (role == null || (int) role != this.roleCode || session["loggedUserId"] == null) {
-                context.Controller.TempData["authError"] = true;
+                context.Controller.TempData["errorMessage"] = Language.Messages.messages.authError;
                 context.Result = new RedirectToRouteResult(new RouteValueDictionary {
                     {"Controller", "Home"},
                     {"Action", "Login"}

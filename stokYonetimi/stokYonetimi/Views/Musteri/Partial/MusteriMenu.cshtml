@@ -1,4 +1,5 @@
-﻿@{
+﻿@using stokYonetimi.Language.PageContents
+@{
     string[] links = new string[3];
     links[0] = "href=/Musteri/SiparisVer";
     links[1] = "href=/Musteri/SiparisListele";
@@ -17,14 +18,14 @@
     <ul class="navbar-primary-menu">
         <li>
             <a @links[0]>
-                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Sipariş Ver</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">@musteriMenu.siparisVer</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
             </a>
 
             <a @links[1]>
-                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Sipariş Listele</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">@musteriMenu.siparisListele</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
             </a>
             <a @links[2]>
-                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Sepete Git</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">@musteriMenu.sepeteGit</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
             </a>
         </li>
     </ul>

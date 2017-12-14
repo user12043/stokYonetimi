@@ -1,4 +1,5 @@
 ﻿@using stokYonetimi.Language.Messages
+@using stokYonetimi.Language.PageContents
 @{
     ViewBag.Title = "Login";
 }
@@ -7,21 +8,18 @@
     <div class="row main">
         <div class="panel-heading">
             <div class="panel-title text-center">
-                <h1 class="title">Company Name</h1>
+                <h1 class="title">@commons.companyName</h1>
                 <hr/>
             </div>
         </div>
         <div class="main-login main-center">
             @{
                 string message = null;
+                var messageData = TempData["errorMessage"];
 
                 try {
-                    if (TempData["loginError"] != null && (bool) TempData["loginError"]) {
-                        message = @messages.loginError;
-                    } else if (TempData["authError"] != null && ((bool) TempData["authError"])) {
-                        message = @messages.authError;
-                    } else if (TempData["emptyInputError"] != null && ((bool) TempData["emptyInputError"])) {
-                        message = messages.emptyInputError;
+                    if (messageData != null) {
+                        message = (string) messageData;
                     }
                 }
                 catch (Exception e) {
@@ -34,31 +32,31 @@
             }
             <form class="form-horizontal" method="post">
                 <div class="form-group">
-                    <label for="username" class="control-label">Username</label>
+                    <label for="username" class="control-label">@commons.username:</label>
                     <div>
                         <div class="input-group">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-user"></i>
                             </span>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username"/>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="@commons.enterUsernameHere"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="password" class="control-label">Password</label>
+                    <label for="password" class="control-label">@commons.password:</label>
                     <div>
                         <div class="input-group">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-lock"></i>
                             </span>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password"/>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="@commons.enterPasswordHere"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group ">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block buttons login-button" value="Sign in"/>
+                    <input type="submit" class="btn btn-primary btn-lg btn-block buttons login-button" value="@commons.login"/>
                 </div>
             </form>
         </div>

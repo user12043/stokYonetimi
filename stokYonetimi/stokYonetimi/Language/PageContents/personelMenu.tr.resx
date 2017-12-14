@@ -117,22 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="adetFiyat" xml:space="preserve">
-    <value>Unit Price (In Stock)</value>
+  <data name="kurumsal" xml:space="preserve">
+    <value>Kurumsal</value>
   </data>
-  <data name="miktar" xml:space="preserve">
-    <value>Quantity</value>
+  <data name="stoklar" xml:space="preserve">
+    <value>Stoklar</value>
   </data>
-  <data name="olusturulmaTarihi" xml:space="preserve">
-    <value>Crated Date</value>
-  </data>
-  <data name="stokId" xml:space="preserve">
-    <value>Stock ID</value>
-  </data>
-  <data name="urun" xml:space="preserve">
-    <value>Product</value>
-  </data>
-  <data name="urunId" xml:space="preserve">
-    <value>Product ID</value>
+  <data name="urunler" xml:space="preserve">
+    <value>Ürünler</value>
   </data>
 </root>

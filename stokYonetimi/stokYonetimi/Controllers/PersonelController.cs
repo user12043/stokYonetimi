@@ -29,9 +29,9 @@ namespace stokYonetimi.Controllers {
         public ActionResult StokGuncelle(int id) {
             var urunler = context.Urunler.ToList();
             Stok stok = context.Stoklar.Find(id);
-            ViewBag.stok = stok;
+            ViewBag.urunler = urunler;
 
-            return View(urunler);
+            return View(stok);
         }
 
         [KisiAuth(roleCode = 1)]

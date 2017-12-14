@@ -129,6 +129,9 @@
   <data name="stokId" xml:space="preserve">
     <value>Stok ID</value>
   </data>
+  <data name="urun" xml:space="preserve">
+    <value>Ürün</value>
+  </data>
   <data name="urunId" xml:space="preserve">
     <value>Ürün ID</value>
   </data>
