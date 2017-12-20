@@ -70,7 +70,7 @@ namespace stokYonetimi.Language.Messages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All fields must filled in!.
+        ///   Looks up a localized string similar to All fields must be filled in!.
         /// </summary>
         public static string emptyInputError {
             get {
@@ -88,7 +88,7 @@ namespace stokYonetimi.Language.Messages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An exception happened during process! Please try again later..
+        ///   Looks up a localized string similar to An exception occured during process! Please try again later..
         /// </summary>
         public static string serverError {
             get {

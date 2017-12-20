@@ -121,12 +121,12 @@
     <value>You must login to access!</value>
   </data>
   <data name="emptyInputError" xml:space="preserve">
-    <value>All fields must filled in!</value>
+    <value>All fields must be filled in!</value>
   </data>
   <data name="loginError" xml:space="preserve">
     <value>Invalid input! Try again.</value>
   </data>
   <data name="serverError" xml:space="preserve">
-    <value>An exception happened during process! Please try again later.</value>
+    <value>An exception occured during process! Please try again later.</value>
   </data>
 </root>
