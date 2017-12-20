@@ -1,28 +1,32 @@
 ﻿@{
-    ViewBag.Title = "SiparisListele";
+    ViewBag.Title = @musteriMenu.siparisListele;
 }
 
 @{ ViewData["activePage"] = 1; }
 @Html.Partial("Partial/MusteriMenu")
 
+@using stokYonetimi.Language.ModelLang
+@using stokYonetimi.Language.PageContents
 @model List<stokYonetimi.Models.Siparis>
 
 <div class="main-content">
 
     <div class="content">
         <button class="btn buttons addButton btn-lg" onclick="location.href = '/Musteri/SiparisVer'">
-            <a href="#"><span class="glyphicon glyphicon-plus-sign"></span></a>
+            <a href="#">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+            </a>
         </button>
         <table class="table table-bordered listTable">
             <thead>
             <tr>
-                <td>Durum</td>
-                <td>Ürün Adı</td>
-                <td>Miktarı</td>
-                <td>Adet Fiyatı</td>
-                <td>Ödenen</td>
-                <td>Sipariş Tarihi</td>
-                <td>İşlemler</td>
+                <td>@siparis.durum</td>
+                <td>@siparis.urun</td>
+                <td>@siparis.miktar</td>
+                <td>@urun.adetFiyat</td>
+                <td>@siparis.fiyat</td>
+                <td>@siparis.tarih</td>
+                @*<td>@commons.options</td>*@
             </tr>
             </thead>
             <tbody>
@@ -30,76 +34,27 @@
             @foreach (var siparis in Model) {
                 <tr>
                     <td>
-                        <input type="checkbox" name="" checked="checked">
+                        @if (siparis.Durum) {
+                            <span class="glyphicon glyphicon-ok"></span>
+                        } else {
+                            <span class="glyphicon glyphicon-remove"></span>
+                        }
                     </td>
                     <td>@siparis.Urun.Isim</td>
                     <td>@siparis.Miktar</td>
                     <td>@siparis.Urun.AdetFiyat</td>
                     <td>@siparis.Fiyat</td>
                     <td>@siparis.Tarih</td>
-                    <td>
-                        <span class="glyphicon glyphicon-edit"></span>
-                        <span class="glyphicon glyphicon-minus-sign"></span>
-                    </td>
+                    @*<td>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-minus-sign"></span>
+                        </a>
+                    </td>*@
                 </tr>
             }
-
-            @*<tr>
-                <td>
-                    <input type="checkbox" name="" checked="1">
-                </td>
-                <td>Ürün 1</td>
-                <td>40</td>
-                <td>150€</td>
-                <td>6000€</td>
-                <td>01/05/2017</td>
-                <td>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    <span class="glyphicon glyphicon-minus-sign"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" name="">
-                </td>
-                <td>Ürün 2</td>
-                <td>20</td>
-                <td>80€</td>
-                <td>1600€</td>
-                <td>08/11/2017</td>
-                <td>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    <span class="glyphicon glyphicon-minus-sign"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" name="">
-                </td>
-                <td>Ürün 3</td>
-                <td>40</td>
-                <td>100€</td>
-                <td>4000€</td>
-                <td>23/12/2016</td>
-                <td>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    <span class="glyphicon glyphicon-minus-sign"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" name="">
-                </td>
-                <td>Ürün 4</td>
-                <td>150</td>
-                <td>30€</td>
-                <td>4500€</td>
-                <td>06/06/2017</td>
-                <td>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    <span class="glyphicon glyphicon-minus-sign"></span>
-                </td>
-            </tr>*@
             </tbody>
         </table>
     </div>

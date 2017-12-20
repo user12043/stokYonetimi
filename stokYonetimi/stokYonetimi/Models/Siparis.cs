@@ -24,6 +24,10 @@ namespace stokYonetimi.Models {
         [Display(Name = "fiyat", ResourceType = typeof(Language.ModelLang.siparis))]
         public int Fiyat { get; set; }
 
+        [Column("durum")]
+        [Display(Name = "durum", ResourceType = typeof(Language.ModelLang.siparis))]
+        public bool Durum { get; set; }
+
         [Column("musteriId")]
         [Display(Name = "musteriId", ResourceType = typeof(Language.ModelLang.siparis))]
         public int MusteriId { get; set; }

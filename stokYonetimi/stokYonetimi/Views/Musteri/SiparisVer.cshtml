@@ -1,111 +1,80 @@
-﻿@{
-    ViewBag.Title = "SiparisVer";
+﻿@using stokYonetimi.Language.ModelLang
+@using stokYonetimi.Language.PageContents
+@{
+    ViewBag.Title = @musteriMenu.siparisVer;
 }
-
-@*<nav class="navbar-primary" id="navbar1">
-    <a class="btn-expand-collapse" onclick="collapseMenu(1);">
-        <span class="glyphicon glyphicon-menu-left"></span>
-    </a>
-    <ul class="navbar-primary-menu">
-        <li>
-            <a class="active">
-                <span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Sipariş Ver</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
-            </a>
-            <a href="/Musteri/SiparisListele">
-                <span class="glyphicon glyphicon-th-list"></span><span class="nav-label">Sipariş Listele</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
-            </a>
-            <a href="/Musteri/SepeteGit">
-                <span class="glyphicon glyphicon-shopping-cart"></span><span class="nav-label">Sepete Git</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
-            </a>
-        </li>
-    </ul>
-</nav>*@
 
 @{ ViewData["activePage"] = 0; }
 @Html.Partial("Partial/MusteriMenu", ViewData)
+
+@model List<stokYonetimi.Models.Urun>
 
 <div class="main-content">
     <div class="contentMenu">
         <nav class="navbar-primary" id="navbar2">
             <ul class="navbar-primary-menu">
-                <li>
-                    <a href="#" class="active">
-                        <span class="nav-label">Ürün 1</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
-                    </a>
-                    <a href="#">
-                        <span class="nav-label">Ürün 2</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
-                    </a>
-                    <a href="#">
-                        <span class="nav-label">Ürün 3</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
-                    </a>
-                </li>
+                @{
+                    var activeUrun = ViewBag.activeUrun;
+                    int adetFiyat = 0;
+                    int urunId = 0;
+                    bool urunVar = false;
+                    if (activeUrun != null) {
+                        adetFiyat = activeUrun.AdetFiyat;
+                        urunId = activeUrun.UrunId;
+                        urunVar = true;
+                    }
+
+
+                    int sayac = 1;
+                    foreach (var urun in Model) {
+                        string active = (sayac == urunId) ? "active" : "";
+
+                        <li>
+                            <a href="/Musteri/SiparisVer?urunId=@urun.UrunId" class="@active">
+                                <span class="nav-label">@urun.Isim</span><span class="glyphicon glyphicon-arrow-right menuArrow"></span>
+                            </a>
+                        </li>
+
+                        sayac = sayac + 1;
+                    }
+                }
             </ul>
         </nav>
     </div>
+
     <div class="content2">
-        <form>
-            <table>
-                <tr>
-                    <td>
-                        <label for="adetFiyat">Adet Fiyatı: </label>
-                    </td>
-                    <td>
-                        <input class="form-control" id="adetFiyat" type="text" value="150€">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="formSeperator"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="miktar">Ürün Miktarı: </label>
-                    </td>
-                    <td><input class="form-control" id="miktar" type="text" value="5">
-                </tr>
-                <tr>
-                    <td>
-                        <div class="formSeperator"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="formSeperator"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="fiyat">Toplam Fiyat: </label>
-                    </td>
-                    <td>
-                        <input class="form-control" id="fiyat" type="text" value="750€">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="formSeperator"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="formSeperator"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="formSeperator"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="btn buttons" type="submit" value="Sepete Ekle">
-                    </td>
-                </tr>
-                <div class="formImage">
-                    <img class="img img-thumbnail img-responsive" src="~/Assets/img.jpg" alt="Ürün Resmi" height="400" width="400">
+        <form action="/SiparisData/SiparisEkle" method="post">
+            <input type="hidden" name="urunId" value="@urunId"/>
+
+            <div class="formContentLeft">
+                <div class="form-group">
+                    <label for="siparisMiktar">@siparis.miktar:</label>
+                    <input class="form-control" type="number" id="siparisMiktar" name="miktar" value="0"/>
                 </div>
-            </table>
+                <div class="form-group">
+                    <label for="adetFiyat">@urun.adetFiyat:</label>
+                    <input class="form-control" type="number" id="adetFiyat" name="adetFiyat" value="@adetFiyat" readonly="readonly"/>
+                </div>
+                <div class="form-group">
+                    <label for="fiyat">@siparis.fiyat:</label>
+                    <input class="form-control" type="number" id="fiyat" name="fiyat" value="" readonly="readonly"/>
+                </div>
+            </div>
+            <div class="formContentRight">
+                <div class="form-group">
+                    <label for="urunResim">@urun.resim:</label>
+                    <img class="img img-thumbnail img-responsive" id="urunResim" src="~/Assets/img.jpg" alt="@commons.noPicture" height="400" width="400">
+                </div>
+            </div>
+            <div class="form-group">
+                @{
+                    string disabled = "disabled";
+                    if (urunVar) {
+                        disabled = "";
+                    }
+                    <input class="form-control btn buttons" type="submit" value="@commons.set"@disabled>
+                }
+            </div>
         </form>
     </div>
 

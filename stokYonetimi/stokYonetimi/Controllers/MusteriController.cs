@@ -18,15 +18,18 @@ namespace stokYonetimi.Controllers {
 
         [KisiAuth(roleCode = 0)]
         // GET: Musteri/SiparisVer
-        public ActionResult SiparisVer() {
-            return View();
+        public ActionResult SiparisVer(int? urunId) {
+            List<Urun> urunList = context.Urunler.ToList();
+            Urun activeUrun = urunList.FirstOrDefault(urun => urun.UrunId == urunId);
+            ViewBag.activeUrun = activeUrun;
+            return View(urunList);
         }
 
         [KisiAuth(roleCode = 0)]
         // GET: Musteri/SiparisListele
         public ActionResult SiparisListele() {
-            List<Siparis> siparisList = context.Siparisler.ToList();
-
+            var id = (int) Session["loggedUserId"];
+            List<Siparis> siparisList = context.Siparisler.Where(siparis => siparis.MusteriId == id).ToList();
             return View(siparisList);
         }
 

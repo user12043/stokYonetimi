@@ -126,6 +126,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomAttributes\KisiAuthAttribute.cs" />
     <Compile Include="Controllers\DataControllers\MusteriDataController.cs" />
+    <Compile Include="Controllers\DataControllers\SiparisDataController.cs" />
     <Compile Include="Controllers\DataControllers\StokDataController.cs" />
     <Compile Include="Controllers\DataControllers\UrunDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -295,6 +296,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SiparisData\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

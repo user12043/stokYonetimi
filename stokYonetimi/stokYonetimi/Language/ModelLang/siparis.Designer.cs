@@ -61,6 +61,15 @@ namespace stokYonetimi.Language.ModelLang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string durum {
+            get {
+                return ResourceManager.GetString("durum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invoice.
         /// </summary>
         public static string fatura {

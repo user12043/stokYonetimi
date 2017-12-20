@@ -37,3 +37,22 @@ function formControl() {
 if (window.errorMessage) {
     showMessage(window.errorMessage, "danger");
 }
+
+$("#siparisMiktar").keypress(
+    function (e) {
+        e.preventDefault();
+    }
+);
+
+$("#siparisMiktar").change(
+    function() {
+        var value = $(this).val();
+        if (value < 0 || isNaN(value)) {
+            value = 0;
+            $(this).val(0);
+        }
+
+        var unit = $("#adetFiyat").val();
+        $("#fiyat").val(value * unit);
+    }
+);
